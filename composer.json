@@ -1,0 +1,17 @@
+{
+    "name": "sanji/phpframework",
+    "description": "A PHP Framework",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sanji"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/Framework",
+            "App\\": "src/App"
+        }
+    }
+}
