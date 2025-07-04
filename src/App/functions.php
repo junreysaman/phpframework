@@ -12,3 +12,7 @@ function inspectAndDie(mixed $value): void{
     inspect($value);
     die();
 }
+
+function escape(mixed $value): string{
+    return htmlspecialchars((string) $value);
+}
