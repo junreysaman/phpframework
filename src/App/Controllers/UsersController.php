@@ -20,4 +20,4 @@ class UsersController
             'title' => 'Login'
         ]);
     }
-}
+} 
