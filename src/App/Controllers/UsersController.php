@@ -13,11 +13,4 @@ class UsersController
     {
     }
 
-    public function login()
-    {
-
-        echo $this->view->render('userauth/login.php', [
-            'title' => 'Login'
-        ]);
-    }
 } 

@@ -6,11 +6,12 @@ namespace App\Config;
 
 use Framework\App;
 
-use App\Controllers\{HomeController, UsersController};
+use App\Controllers\{HomeController, AuthController};
 
 
 function registerRoutes(App $app)
 {
     $app->get('/', [HomeController::class, 'home']);
-    $app->get('/login', [UsersController::class, 'login']);
+    $app->get('/login', [AuthController::class, 'login']);
+    $app->get('/register', [AuthController::class, 'register']);
 }
