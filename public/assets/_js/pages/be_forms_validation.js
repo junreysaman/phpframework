@@ -12,7 +12,7 @@ class pageFormsValidation {
    */
   static initValidation() {
     // Load default options for jQuery Validation plugin
-    Dashmix.helpers('jq-validation');
+    Codebase.helpers('jq-validation');
 
     // Init Form Validation
     jQuery('.js-validation').validate({
@@ -121,4 +121,4 @@ class pageFormsValidation {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageFormsValidation.init());
+Codebase.onLoad(() => pageFormsValidation.init());

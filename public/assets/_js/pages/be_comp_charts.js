@@ -4,10 +4,9 @@
  *  Description: Custom JS code used in Charts Page
  */
 
-// Chart.js Charts, for more examples you can check out http://www.chartjs.org/docs
 class pageCompCharts {
   /*
-   * Init Charts
+   * Chart.js Charts, for more examples you can check out http://www.chartjs.org/docs
    *
    */
   static initChartsChartJS() {
@@ -30,41 +29,37 @@ class pageCompCharts {
     let chartPieCon = document.getElementById('js-chartjs-pie');
     let chartDonutCon = document.getElementById('js-chartjs-donut');
 
-    // Set Chart and Chart Data variables
-    let chartLines, chartBars, chartRadar, chartPolar, chartPie, chartDonut;
-    let chartLinesBarsRadarData, chartPolarPieDonutData;
-
     // Lines/Bar/Radar Chart Data
-    chartLinesBarsRadarData = {
+    let chartLinesBarsRadarData = {
       labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
       datasets: [
         {
           label: 'This Week',
           fill: true,
-          backgroundColor: 'rgba(6, 101, 208, .75)',
-          borderColor: 'rgba(6, 101, 208, 1)',
-          pointBackgroundColor: 'rgba(6, 101, 208, 1)',
+          backgroundColor: 'rgba(2, 132, 199, .75)',
+          borderColor: 'rgba(2, 132, 199, 1)',
+          pointBackgroundColor: 'rgba(2, 132, 199, 1)',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(6, 101, 208, 1)',
-          data: [34, 42, 62, 78, 39, 83, 98]
+          pointHoverBorderColor: 'rgba(2, 132, 199, 1)',
+          data: [25, 38, 62, 45, 90, 115, 130]
         },
         {
           label: 'Last Week',
           fill: true,
-          backgroundColor: 'rgba(108, 117, 125, .25)',
-          borderColor: 'rgba(108, 117, 125, .75)',
-          pointBackgroundColor: 'rgba(108, 117, 125, 1)',
+          backgroundColor: 'rgba(2, 132, 199, .25)',
+          borderColor: 'rgba(2, 132, 199, 1)',
+          pointBackgroundColor: 'rgba(2, 132, 199, 1)',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(108, 117, 125, 1)',
-          data: [130, 95, 125, 160, 187, 110, 143]
+          pointHoverBorderColor: 'rgba(2, 132, 199, 1)',
+          data: [112, 90, 142, 130, 170, 188, 196]
         }
       ]
     };
 
     // Polar/Pie/Donut Data
-    chartPolarPieDonutData = {
+    let chartPolarPieDonutData = {
       labels: [
         'Earnings',
         'Sales',
@@ -72,24 +67,26 @@ class pageCompCharts {
       ],
       datasets: [{
           data: [
-            65,
-            15,
-            20
+            50,
+            25,
+            25
           ],
           backgroundColor: [
-            'rgba(141, 196, 81, 1)',
-            'rgba(255, 177, 25, 1)',
-            'rgba(224, 79, 26, 1)'
+            'rgba(101, 163, 13, 1)',
+            'rgba(217, 119, 6, 1)',
+            'rgba(220, 38, 38, 1)'
           ],
           hoverBackgroundColor: [
-            'rgba(141, 196, 81, .5)',
-            'rgba(255, 177, 25, .5)',
-            'rgba(224, 79, 26, .5)'
+            'rgba(101, 163, 13, .5)',
+            'rgba(217, 119, 6, .5)',
+            'rgba(220, 38, 38, .5)'
           ]
         }]
     };
 
     // Init Charts
+    let chartLines, chartBars, chartRadar, chartPolar, chartPie, chartDonut;
+
     if (chartLinesCon !== null) {
       chartLines = new Chart(chartLinesCon, {type: 'line', data: chartLinesBarsRadarData, options: { responsive: true, maintainAspectRatio: false, tension: .4 }});
     }
@@ -134,10 +131,10 @@ class pageCompCharts {
    *
    */
   static init() {
-    this.initChartsChartJS();
     this.initRandomEasyPieChart();
+    this.initChartsChartJS();
   }
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageCompCharts.init());
+Codebase.onLoad(() => pageCompCharts.init());

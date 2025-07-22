@@ -92,4 +92,4 @@ class pageAuthTwoFactor {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageAuthTwoFactor.init());
+Codebase.onLoad(() => pageAuthTwoFactor.init());

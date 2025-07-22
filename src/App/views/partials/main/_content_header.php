@@ -1,144 +1,114 @@
- <!-- Header -->
- <header id="page-header">
+<!-- Header -->
+<header id="page-header">
         <!-- Header Content -->
         <div class="content-header">
           <!-- Left Section -->
-          <div>
-            <!-- Toggle Sidebar -->
-            <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-            <button type="button" class="btn btn-alt-secondary d-lg-none" data-toggle="layout" data-action="sidebar_toggle">
-              <i class="fa fa-fw fa-bars"></i>
-            </button>
-            <!-- END Toggle Sidebar -->
-
-            <!-- Open Search Section -->
-            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-            <button type="button" class="btn btn-alt-secondary" data-toggle="layout" data-action="header_search_on">
-              <i class="fa fa-fw fa-search"></i> <span class="ms-1 d-none d-sm-inline-block">Search..</span>
-            </button>
-            <!-- END Open Search Section -->
+          <div class="space-x-1">
+            <!-- Logo -->
+            <a class="link-fx fw-bold" href="index.html">
+              <i class="fa fa-fire text-primary"></i>
+              <span class="fs-4 text-dual">code</span><span class="fs-4 text-primary">base</span>
+            </a>
+            <!-- END Logo -->
           </div>
           <!-- END Left Section -->
 
-          <!-- Right Section -->
-          <div>
-            <!-- Notifications Dropdown -->
-            <div class="dropdown d-inline-block">
-              <button type="button" class="btn btn-alt-secondary" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="far fa-fw fa-flag"></i>
-                <span class="badge bg-primary rounded-pill">3</span>
-              </button>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
-                <div class="bg-primary-dark rounded-top fw-semibold text-white text-center p-3">
-                  Notifications
-                </div>
-                <ul class="nav-items my-2">
-                  <li>
-                    <a class="d-flex text-dark py-2" href="javascript:void(0)">
-                      <div class="flex-shrink-0 mx-3">
-                        <i class="fa fa-fw fa-check-circle text-success"></i>
-                      </div>
-                      <div class="flex-grow-1 fs-sm pe-2">
-                        <div class="fw-semibold">App was updated to v5.6!</div>
-                        <div class="text-muted">3 min ago</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="d-flex text-dark py-2" href="javascript:void(0)">
-                      <div class="flex-shrink-0 mx-3">
-                        <i class="fa fa-fw fa-user-plus text-info"></i>
-                      </div>
-                      <div class="flex-grow-1 fs-sm pe-2">
-                        <div class="fw-semibold">New Subscriber was added! You now have 2580!</div>
-                        <div class="text-muted">10 min ago</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="d-flex text-dark py-2" href="javascript:void(0)">
-                      <div class="flex-shrink-0 mx-3">
-                        <i class="fa fa-times-circle text-danger"></i>
-                      </div>
-                      <div class="flex-grow-1 fs-sm pe-2">
-                        <div class="fw-semibold">Server backup failed to complete!</div>
-                        <div class="text-muted">30 min ago</div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-                <div class="p-2 border-top">
-                  <a class="btn btn-alt-primary w-100 text-center" href="javascript:void(0)">
-                    <i class="fa fa-fw fa-eye opacity-50 me-1"></i> View All
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- END Notifications Dropdown -->
+          <!-- Middle Section -->
+          <div class="d-none d-lg-block">
+            <!-- Header Navigation -->
+            <!-- Desktop Navigation, mobile navigation can be found in #sidebar -->
+            <ul class="nav-main nav-main-horizontal nav-main-hover">
 
-            <!-- User Dropdown -->
-            <div class="dropdown d-inline-block">
-              <button type="button" class="btn btn-alt-secondary" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="far fa-fw fa-user-circle"></i>
-                <i class="fa fa-fw fa-angle-down ms-1 d-none d-sm-inline-block"></i>
+            </ul>
+            <!-- END Header Navigation -->
+          </div>
+          <!-- END Middle Section -->
+
+          <!-- Right Section -->
+          <div class="space-x-1">
+            <!-- Color Themes -->
+            <!-- Themes functionality initialized in Template._uiHandleTheme() -->
+            <div class="dropdown d-inline-block" role="group">
+              <button type="button" class="btn btn-sm btn-alt-secondary" id="page-header-themes-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-fw fa-paint-brush"></i>
               </button>
-              <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">
-                <div class="bg-primary-dark rounded-top fw-semibold text-white text-center p-3">
-                  <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/media/avatars/avatar10.jpg" alt="">
-                  <div class="pt-2">
-                    <a class="text-white fw-semibold" href="be_pages_generic_profile.html">George Taylor</a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0" aria-labelledby="page-header-themes-dropdown">
+                <div class="p-3 bg-body-light rounded-top">
+                  <h5 class="h6 text-center mb-0">
+                    Color Themes
+                  </h5>
+                </div>
+                <div class="p-3">
+                  <div class="row g-0 text-center mb-1">
+                    <div class="col-2 mb-1">
+                      <a class="text-default" data-toggle="theme" data-theme="default" href="javascript:void(0)">
+                        <i class="fa fa-2x fa-circle"></i>
+                      </a>
+                    </div>
+                    <div class="col-2 mb-1">
+                      <a class="text-elegance" data-toggle="theme" data-theme="assets/css/themes/elegance.min.css" href="javascript:void(0)">
+                        <i class="fa fa-2x fa-circle"></i>
+                      </a>
+                    </div>
+                    <div class="col-2 mb-1">
+                      <a class="text-pulse" data-toggle="theme" data-theme="assets/css/themes/pulse.min.css" href="javascript:void(0)">
+                        <i class="fa fa-2x fa-circle"></i>
+                      </a>
+                    </div>
+                    <div class="col-2 mb-1">
+                      <a class="text-flat" data-toggle="theme" data-theme="assets/css/themes/flat.min.css" href="javascript:void(0)">
+                        <i class="fa fa-2x fa-circle"></i>
+                      </a>
+                    </div>
+                    <div class="col-2 mb-1">
+                      <a class="text-corporate" data-toggle="theme" data-theme="assets/css/themes/corporate.min.css" href="javascript:void(0)">
+                        <i class="fa fa-2x fa-circle"></i>
+                      </a>
+                    </div>
+                    <div class="col-2 mb-1">
+                      <a class="text-earth" data-toggle="theme" data-theme="assets/css/themes/earth.min.css" href="javascript:void(0)">
+                        <i class="fa fa-2x fa-circle"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div class="p-2">
-                  <a class="dropdown-item" href="be_pages_generic_profile.html">
-                    <i class="far fa-fw fa-user me-1"></i> Profile
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
-                    <span><i class="far fa-fw fa-envelope me-1"></i> Inbox</span>
-                    <span class="badge bg-primary">3</span>
-                  </a>
-                  <a class="dropdown-item" href="be_pages_generic_invoice.html">
-                    <i class="far fa-fw fa-file-alt me-1"></i> Invoices
-                  </a>
-                  <div role="separator" class="dropdown-divider"></div>
-
-                  <!-- Toggle Side Overlay -->
-                  <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                  <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
-                    <i class="far fa-fw fa-building me-1"></i> Settings
-                  </a>
-                  <!-- END Side Overlay -->
-
-                  <div role="separator" class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="op_auth_signin.html">
-                    <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Sign Out
-                  </a>
-                </div>
               </div>
             </div>
-            <!-- END User Dropdown -->
+            <!-- END Color Themes -->
 
-            <!-- Toggle Side Overlay -->
+            <!-- Open Search Section -->
             <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-            <button type="button" class="btn btn-alt-secondary" data-toggle="layout" data-action="side_overlay_toggle">
-              <i class="far fa-fw fa-bookmark"></i>
+            <button type="button" class="btn btn btn-sm btn-alt-secondary" data-toggle="layout" data-action="header_search_on">
+              <i class="fa fa-fw fa-search"></i>
             </button>
-            <!-- END Toggle Side Overlay -->
+            <!-- END Open Search Section -->
+
+            <!-- Toggle Sidebar -->
+            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+            <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout" data-action="sidebar_toggle">
+              <i class="fa fa-fw fa-bars"></i>
+            </button>
+            <!-- END Toggle Sidebar -->
           </div>
           <!-- END Right Section -->
         </div>
         <!-- END Header Content -->
 
         <!-- Header Search -->
-        <div id="page-header-search" class="overlay-header bg-sidebar-dark">
+        <div id="page-header-search" class="overlay-header bg-body-extra-light">
           <div class="content-header">
-            <form class="w-100" action="be_pages_generic_search.html" method="POST">
+            <form class="w-100" action="bd_search.html" method="POST">
               <div class="input-group">
+                <!-- Close Search Section -->
                 <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                <button type="button" class="btn btn-dark" data-toggle="layout" data-action="header_search_off">
-                  <i class="fa fa-fw fa-times-circle"></i>
+                <button type="button" class="btn btn-secondary" data-toggle="layout" data-action="header_search_off">
+                  <i class="fa fa-fw fa-times"></i>
                 </button>
-                <input type="text" class="form-control border-0" placeholder="Search Application.." id="page-header-search-input" name="page-header-search-input">
+                <!-- END Close Search Section -->
+                <input type="text" class="form-control" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
+                <button type="submit" class="btn btn-secondary">
+                  <i class="fa fa-fw fa-search"></i>
+                </button>
               </div>
             </form>
           </div>
@@ -146,11 +116,11 @@
         <!-- END Header Search -->
 
         <!-- Header Loader -->
-        <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
-        <div id="page-header-loader" class="overlay-header bg-primary-darker">
+        <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
+        <div id="page-header-loader" class="overlay-header bg-primary">
           <div class="content-header">
             <div class="w-100 text-center">
-              <i class="fa fa-fw fa-2x fa-sun fa-spin text-white"></i>
+              <i class="far fa-sun fa-spin text-white"></i>
             </div>
           </div>
         </div>

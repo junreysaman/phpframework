@@ -1,5 +1,5 @@
 //
-// Dashmix - UI Framework
+// Codebase UI Framework
 // --------------------------------------------------
 
 // Bootstrap functions
@@ -9,7 +9,7 @@
 @import 'custom/variables';
 
 // Custom Bootstrap variables overrides
-@import 'dashmix/variables-bootstrap';
+@import 'codebase/variables-bootstrap';
 
 // Bootstrap variables
 @import 'bootstrap/variables';
@@ -21,15 +21,15 @@
 @import 'bootstrap/mixins';
 
 // Custom mixins and Bootstrap overrides
-@import 'dashmix/mixins';
+@import 'codebase/mixins';
 
 // Bootstrap Utilities
 @import 'bootstrap/utilities';
 
 // Custom utilities and Bootstrap overrides
-@import 'dashmix/utilities';
+@import 'codebase/utilities';
 
-// Layout & components
+// Bootstrap components (original)
 @import 'bootstrap/root';
 @import 'bootstrap/reboot';
 @import 'bootstrap/type';
@@ -69,50 +69,49 @@
 @import 'bootstrap/utilities/api';
 
 // Custom variables
-@import 'dashmix/variables';
-@import 'dashmix/variables-themes';
+@import 'codebase/variables';
+@import 'codebase/variables-themes';
 
 // Extend Bootstrap styles and override the ones..
 // ..we can't alter with the provided variables
-@import "dashmix/fonts";
-@import 'dashmix/reboot';
-@import 'dashmix/type';
-@import 'dashmix/grid';
-@import 'dashmix/tables';
-@import 'dashmix/forms';
-@import 'dashmix/buttons';
-@import 'dashmix/transitions';
-@import 'dashmix/dropdown';
-@import 'dashmix/nav';
-@import 'dashmix/card';
-@import 'dashmix/breadcrumb';
-@import 'dashmix/pagination';
-@import 'dashmix/modal';
-@import 'dashmix/print';
+@import 'codebase/reboot';
+@import 'codebase/type';
+@import 'codebase/grid';
+@import 'codebase/tables';
+@import 'codebase/forms';
+@import 'codebase/buttons';
+@import 'codebase/transitions';
+@import 'codebase/dropdown';
+@import 'codebase/nav';
+@import 'codebase/card';
+@import 'codebase/breadcrumb';
+@import 'codebase/pagination';
+@import 'codebase/modal';
+@import 'codebase/print';
 
-// Custom layout
-@import 'dashmix/layout';
-@import 'dashmix/header';
-@import 'dashmix/sidebar';
-@import 'dashmix/side-overlay';
-@import 'dashmix/layout-variations';
-@import 'dashmix/hero';
-@import 'dashmix/block';
+// Codebase layout
+@import 'codebase/layout';
+@import 'codebase/header';
+@import 'codebase/sidebar';
+@import 'codebase/side-overlay';
+@import 'codebase/layout-variations';
+@import 'codebase/hero';
+@import 'codebase/block';
 
-// Custom components
-@import 'dashmix/page-loader';
-@import 'dashmix/nav-main';
-@import 'dashmix/images';
-@import 'dashmix/lists';
-@import 'dashmix/item';
-@import 'dashmix/overlay';
-@import 'dashmix/timeline';
-@import 'dashmix/ribbon';
+// Codebase components
+@import 'codebase/page-loader';
+@import 'codebase/nav-main';
+@import 'codebase/images';
+@import 'codebase/lists';
+@import 'codebase/item';
+@import 'codebase/overlay';
+@import 'codebase/timeline';
+@import 'codebase/ribbon';
 
 // Helpers
-@import 'dashmix/helpers';
+@import 'codebase/helpers';
 
-// Core third party components
+// Third party components
 @import 'vendor/animate';
 @import 'vendor/fontawesome/fontawesome';
 @import 'vendor/fontawesome/regular';
@@ -121,13 +120,14 @@
 @import 'vendor/simple-line-icons';
 @import 'vendor/simplebar';
 
-// Optional third party plugins (style overrides)
+// Third party plugins (style overrides)
 @import 'vendor/bootstrap-datepicker';
 @import 'vendor/ckeditor';
 @import 'vendor/dropzone';
 @import 'vendor/datatables';
 @import 'vendor/easy-pie-chart';
 @import 'vendor/fullcalendar';
+@import 'vendor/highlightjs';
 @import 'vendor/ion-range-slider';
 @import 'vendor/jquery-sparkline';
 @import 'vendor/jvector-map';
@@ -135,14 +135,15 @@
 @import 'vendor/select2';
 @import 'vendor/simplemde';
 @import 'vendor/slick';
+@import 'vendor/simplebar';
 @import 'vendor/nestable2';
 @import 'vendor/flatpickr';
 
 // RTL Support
-@import 'dashmix/rtl-support';
+@import 'codebase/rtl-support';
 
 // Dark mode
-@import 'dashmix/dark-mode';
+@import 'codebase/dark-mode';
 
 // User styles (your own styles/overrides)
 @import 'custom/main';

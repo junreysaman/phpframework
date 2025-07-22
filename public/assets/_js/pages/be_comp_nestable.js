@@ -44,4 +44,4 @@ class pageCompNestable {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageCompNestable.init());
+Codebase.onLoad(() => pageCompNestable.init());

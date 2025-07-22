@@ -47,7 +47,7 @@
 		// Browser
 		factory( jQuery, window, document );
 	}
-}(function( $, window, document ) {
+}(function( $, window, document, undefined ) {
 'use strict';
 var DataTable = $.fn.dataTable;
 
@@ -79,21 +79,15 @@ DataTable.Responsive.bootstrap = function (bs) {
 };
 
 _display.modal = function (options) {
-	if (!modal && _bs.Modal) {
+	if (!modal) {
 		modal = new _bs.Modal(_modal[0]);
 	}
 
 	return function (row, update, render, closeCallback) {
-		if (! modal) {
+		if (!$.fn.modal) {
 			return _original(row, update, render, closeCallback);
 		}
 		else {
-			var rendered = render();
-
-			if (rendered === false) {
-				return false;
-			}
-
 			if (!update) {
 				if (options && options.header) {
 					var header = _modal.find('div.modal-header');
@@ -105,18 +99,19 @@ _display.modal = function (options) {
 						.append(button);
 				}
 
-				_modal.find('div.modal-body').empty().append(rendered);
+				_modal.find('div.modal-body').empty().append(render());
 
 				_modal
 					.data('dtr-row-idx', row.index())
 					.one('hidden.bs.modal', closeCallback)
-					.appendTo('body');
+					.appendTo('body')
+					.modal();
 
 				modal.show();
 			}
 			else {
 				if ($.contains(document, _modal[0]) && row.index() === _modal.data('dtr-row-idx')) {
-					_modal.find('div.modal-body').empty().append(rendered);
+					_modal.find('div.modal-body').empty().append(render());
 				}
 				else {
 					// Modal not shown for this row - do nothing

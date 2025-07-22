@@ -4,14 +4,15 @@
  *  Description: Custom JS code used in Sign In Page
  */
 
+// Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
 class pageAuthSignIn {
   /*
-   * Init Sign In Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
+   * Init Sign In Form Validation
    *
    */
-  static initValidation() {
+  static initValidationSignIn() {
     // Load default options for jQuery Validation plugin
-    Dashmix.helpers('jq-validation');
+    Codebase.helpers('jq-validation');
 
     // Init Form Validation
     jQuery('.js-validation-signin').validate({
@@ -43,9 +44,9 @@ class pageAuthSignIn {
    *
    */
   static init() {
-    this.initValidation();
+    this.initValidationSignIn();
   }
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageAuthSignIn.init());
+Codebase.onLoad(() => pageAuthSignIn.init());

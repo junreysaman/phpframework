@@ -151,4 +151,4 @@ class pageCompMapsVector {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageCompMapsVector.init());
+Codebase.onLoad(() => pageCompMapsVector.init());

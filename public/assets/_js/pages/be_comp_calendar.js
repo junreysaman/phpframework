@@ -6,10 +6,6 @@
 
 // Full Calendar, for more examples you can check out http://fullcalendar.io/
 class pageCompCalendar {
-  /*
-   * Add event to the events list
-   *
-   */
   static addEvent() {
     let eventInput = document.querySelector('.js-add-event');
     let eventInputVal = '';
@@ -31,10 +27,9 @@ class pageCompCalendar {
         newEventDiv.classList.add('js-event');
         newEventDiv.classList.add('p-2');
         newEventDiv.classList.add('fs-sm');
-        newEventDiv.classList.add('fw-medium');
-        newEventDiv.classList.add('rounded');
-        newEventDiv.classList.add('bg-info-light');
-        newEventDiv.classList.add('text-info');
+        newEventDiv.classList.add('fw-semibold');
+        newEventDiv.classList.add('bg-info');
+        newEventDiv.classList.add('text-white');
         newEventDiv.textContent = eventInputVal;
         
         // Prepare new event li
@@ -58,9 +53,9 @@ class pageCompCalendar {
       itemSelector: '.js-event',
       eventData: function (eventEl) {
         return {
-          title: eventEl.textContent,
-          backgroundColor: getComputedStyle(eventEl).color,
-          borderColor: getComputedStyle(eventEl).color
+          title: eventEl.innerText,
+          backgroundColor: getComputedStyle(eventEl).backgroundColor,
+          borderColor: getComputedStyle(eventEl).backgroundColor
         };
       }
     });
@@ -127,7 +122,7 @@ class pageCompCalendar {
           start: new Date(y, m, d - 3),
           end: new Date(y, m, d - 3),
           allDay: true,
-          color: '#ffb119'
+          color: '#d97706'
         },
         {
           title: 'Lunch',
@@ -144,7 +139,7 @@ class pageCompCalendar {
           start: new Date(y, m, 25),
           end: new Date(y, m, 27),
           allDay: true,
-          color: '#ffb119'
+          color: '#d97706'
         },
         {
           title: 'Reading',
@@ -156,7 +151,7 @@ class pageCompCalendar {
           start: new Date(y, m, 22),
           allDay: true,
           url: 'http://twitter.com/pixelcave',
-          color: '#3c90df'
+          color: '#0891b2'
         }
       ]
     });
@@ -176,4 +171,4 @@ class pageCompCalendar {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageCompCalendar.init());
+Codebase.onLoad(() => pageCompCalendar.init());

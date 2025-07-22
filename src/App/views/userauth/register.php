@@ -1,116 +1,134 @@
 <?php include $this->resolve('partials/authentication/_header.php') ?>
-<div id="page-container">
-      <!-- Main Container -->
-      <main id="main-container">
-        <!-- Page Content -->
-        <div class="bg-image" style="background-image: url('assets/media/photos/photo14@2x.jpg');">
-          <div class="row g-0 justify-content-center bg-black-75">
-            <div class="hero-static col-sm-8 col-md-6 col-xl-4 d-flex align-items-center p-2 px-sm-0">
-              <!-- Sign Up Block -->
-              <div class="block block-transparent block-rounded w-100 mb-0 overflow-hidden">
-                <div class="block-content block-content-full px-lg-5 px-xl-6 py-4 py-md-5 py-lg-6 bg-body-extra-light">
-                  <!-- Header -->
-                  <div class="mb-2 text-center">
-                    <a class="link-fx fw-bold fs-1" href="index.html">
-                      <span class="text-dark">Dash</span><span class="text-primary">mix</span>
-                    </a>
-                    <p class="text-uppercase fw-bold fs-sm text-muted">Create New Account</p>
-                  </div>
-                  <!-- END Header -->
 
-                  <!-- Sign Up Form -->
-                  <!-- jQuery Validation (.js-validation-signup class is initialized in js/pages/op_auth_signup.min.js which was auto compiled from _js/pages/op_auth_signup.js) -->
-                  <!-- For more info and examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                  <form class="js-validation-signup" action="be_pages_auth_all.html" method="POST">
-                    <div class="mb-4">
-                      <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" id="signup-username" name="signup-username" placeholder="Username">
-                        <span class="input-group-text">
-                          <i class="fa fa-user-circle"></i>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="mb-4">
-                      <div class="input-group input-group-lg">
-                        <input type="email" class="form-control" id="signup-email" name="signup-email" placeholder="Email">
-                        <span class="input-group-text">
-                          <i class="fa fa-envelope-open"></i>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="mb-4">
-                      <div class="input-group input-group-lg">
-                        <input type="password" class="form-control" id="signup-password" name="signup-password" placeholder="Password">
-                        <span class="input-group-text">
-                          <i class="fa fa-asterisk"></i>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="mb-4">
-                      <div class="input-group input-group-lg">
-                        <input type="password" class="form-control" id="signup-password-confirm" name="signup-password-confirm" placeholder="Password Confirm">
-                        <span class="input-group-text">
-                          <i class="fa fa-asterisk"></i>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center mb-4 bg-body rounded py-2 px-3">
-                      <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="signup-terms" name="signup-terms">
-                        <label class="form-check-label" for="signup-terms">I agree</label>
-                      </div>
-                      <div class="fw-semibold fs-sm py-1">
-                        <a class="fw-semibold fs-sm" href="#" data-bs-toggle="modal" data-bs-target="#modal-terms">Terms &amp; Conditions</a>
-                      </div>
-                    </div>
-                    <div class="text-center mb-4">
-  <button type="submit" class="btn btn-hero btn-primary">
-    <i class="fa fa-fw fa-plus opacity-50 me-1"></i> Sign Up
-  </button>
-  <div class="mt-3">
-    <a href="/login" class="fs-sm text-muted">Already have an account? <span class="fw-semibold">Login</span></a>
-  </div>
-</div>
-                  </form>
-                  <!-- END Sign Up Form -->
-                </div>
-              </div>
-            </div>
-            <!-- END Sign Up Block -->
-          </div>
 
-          <!-- Terms Modal -->
-          <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="modal-terms" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="block block-themed block-transparent mb-0">
-                  <div class="block-header bg-success">
-                    <h3 class="block-title">Terms &amp; Conditions</h3>
-                    <div class="block-options">
-                      <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fa fa-fw fa-times"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="block-content">
-                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
-                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
-                  </div>
-                  <div class="block-content block-content-full text-end bg-body">
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">Done</button>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END Terms Modal -->
+ <!-- Main Container -->
+ <main id="main-container">
+
+<!-- Page Content -->
+<div class="bg-body-dark">
+  <div class="hero-static content content-full px-1">
+    <div class="row mx-0 justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+        <!-- Header -->
+        <div class="py-4 text-center">
+          <a class="link-fx fw-bold" href="index.html">
+            <i class="fa fa-fire"></i>
+            <span class="fs-4 text-body-color">code</span><span class="fs-4">base</span>
+          </a>
+          <h1 class="h3 fw-bold mt-4 mb-1">
+            Create New Account
+          </h1>
+          <h2 class="fs-5 lh-base fw-normal text-muted mb-0">
+            We’re excited to have you on board!
+          </h2>
         </div>
-        <!-- END Page Content -->
-      </main>
-      <!-- END Main Container -->
+        <!-- END Header -->
+
+        <!-- Sign Up Form -->
+        <!-- jQuery Validation functionality is initialized with .js-validation-signup class in js/pages/op_auth_signup.min.js which was auto compiled from _js/pages/op_auth_signup.js -->
+        <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
+        <form action="/register" class="js-validation-signup" method="POST">
+          <div class="block block-themed block-rounded block-fx-shadow">
+            <div class="block-header bg-gd-emerald">
+              <h3 class="block-title">Please add your details</h3>
+            </div>
+            <div class="block-content">
+              <div class="form-floating mb-4">
+                <input type="text" class="form-control" id="signup-username" name="signup-username" placeholder="Enter your username">
+                <label class="form-label" for="signup-username">Username</label>
+              </div>
+              <div class="form-floating mb-4">
+                <input type="email" class="form-control" id="signup-email" name="signup-email" placeholder="Enter your email">
+                <label class="form-label" for="signup-email">Email</label>
+              </div>
+              <div class="form-floating mb-4">
+                <input type="password" class="form-control" id="signup-password" name="signup-password" placeholder="Enter your password">
+                <label class="form-label" for="signup-password">Password</label>
+              </div>
+              <div class="form-floating mb-4">
+                <input type="password" class="form-control" id="signup-password-confirm" name="signup-password-confirm" placeholder="Confirm password">
+                <label class="form-label" for="signup-password-confirm">Confirm Password</label>
+              </div>
+              <div class="row">
+                <div class="col-sm-6 d-sm-flex align-items-center push">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="signup-terms" name="signup-terms" value="1">
+                    <label class="form-check-label" for="signup-terms">I agree to Terms</label>
+                  </div>
+                </div>
+                <div class="col-sm-6 text-sm-end push">
+                  <button type="submit" class="btn btn-lg btn-alt-primary fw-semibold">
+                    Create Account
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="block-content block-content-full bg-body-light d-flex justify-content-between">
+              <a class="fs-sm fw-medium link-fx text-muted me-2 mb-1 d-inline-block" href="op_auth_signin3.html">
+                <i class="fa fa-arrow-left opacity-50 me-1"></i> Sign In
+              </a>
+              <a class="fs-sm fw-medium link-fx text-muted me-2 mb-1 d-inline-block" href="#" data-bs-toggle="modal" data-bs-target="#modal-terms">
+                <i class="fa fa-book opacity-50 me-1"></i> Read Terms
+              </a>
+            </div>
+          </div>
+        </form>
+        <!-- END Sign Up Form -->
+      </div>
     </div>
-    <!-- END Page Container -->
+  </div>
+
+  <!-- Terms Modal -->
+  <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="modal-terms" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-slidedown" role="document">
+      <div class="modal-content">
+        <div class="block block-rounded shadow-none mb-0">
+          <div class="block-header block-header-default">
+            <h3 class="block-title">Terms &amp; Conditions</h3>
+            <div class="block-options">
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="block-content fs-sm">
+            <h5 class="mb-2">1. General</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.
+            </p>
+            <h5 class="mb-2">2. Account</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.
+            </p>
+            <h5 class="mb-2">3. Service</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.
+            </p>
+            <h5 class="mb-2">4. Payments</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.
+            </p>
+          </div>
+          <div class="block-content block-content-full block-content-sm text-end border-top">
+            <button type="button" class="btn btn-alt-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-alt-primary" data-bs-dismiss="modal">
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Terms Modal -->
 </div>
+<!-- END Page Content -->
+</main>
+<!-- END Main Container -->
+</div>
+<!-- END Page Container -->
+
+
 
 <?php include $this->resolve('partials/authentication/_footer.php') ?>

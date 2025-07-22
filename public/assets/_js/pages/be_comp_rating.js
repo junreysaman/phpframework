@@ -25,7 +25,7 @@ class pageCompRating {
         cancelOff: el.data('cancel-off') || 'fa fa-fw fa-times-circle text-danger',
         cancelOn: el.data('cancel-on') || 'fa fa-fw fa-times-circle',
         starHalf: el.data('star-half') || 'fa fa-fw fa-star-half text-warning',
-        starOff: el.data('star-off') || 'fa fa-fw fa-star text-muted',
+        starOff: el.data('star-off') || 'fa fa-fw fa-star text-muted opacity-50',
         starOn: el.data('star-on') || 'fa fa-fw fa-star text-warning',
         starType: 'i',
         hints: ['Just Bad!', 'Almost There!', 'It’s ok!', 'That’s nice!', 'Incredible!'],
@@ -47,4 +47,4 @@ class pageCompRating {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageCompRating.init());
+Codebase.onLoad(() => pageCompRating.init());

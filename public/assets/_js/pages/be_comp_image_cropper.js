@@ -85,4 +85,4 @@ class pageCompImageCropper {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageCompImageCropper.init());
+Codebase.onLoad(() => pageCompImageCropper.init());

@@ -42,4 +42,4 @@ class pageAnimations {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageAnimations.init());
+Codebase.onLoad(() => pageAnimations.init());

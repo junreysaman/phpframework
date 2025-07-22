@@ -1,10 +1,9 @@
 /*
- *  Document   : be_comp_dialogs.js
+ *  Document   : be_ui_dialogs.js
  *  Author     : pixelcave
  *  Description: Custom JS code used in Dialogs Page
  */
 
-// SweetAlert2, for more examples you can check out https://github.com/sweetalert2/sweetalert2
 class pageDialogs {
   /*
    * SweetAlert2 demo functionality
@@ -135,4 +134,4 @@ class pageDialogs {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageDialogs.init());
+Codebase.onLoad(() => pageDialogs.init());

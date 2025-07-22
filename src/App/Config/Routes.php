@@ -12,6 +12,9 @@ use App\Controllers\{HomeController, AuthController};
 function registerRoutes(App $app)
 {
     $app->get('/', [HomeController::class, 'home']);
-    $app->get('/login', [AuthController::class, 'login']);
-    $app->get('/register', [AuthController::class, 'register']);
+    $app->get('/login', [AuthController::class, 'loginView']);
+    $app->get('/register', [AuthController::class, 'registerView']);
+
+    $app->post('/register', [AuthController::class, 'register']);
+    $app->post('/login', [AuthController::class, 'login']);
 }

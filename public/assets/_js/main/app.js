@@ -6,7 +6,7 @@
  */
 
 // Import required modules
-import Template from "./modules/template.js";
+import Template from './modules/template';
 
 // App extends Template
 export default class App extends Template {
@@ -14,8 +14,8 @@ export default class App extends Template {
    * Auto called when creating a new instance
    *
    */
-  constructor(options) {
-    super(options);
+  constructor() {
+    super();
   }
 
   /*
@@ -37,6 +37,7 @@ export default class App extends Template {
    */
 
   //  _uiInit() {}
+
 
   /*
    * EXAMPLE #2 - Extending default functionality with additional code
@@ -61,4 +62,4 @@ export default class App extends Template {
 }
 
 // Create a new instance of App
-window.Dashmix = new App({ darkMode: "system" }); // Default darkMode preference: "on" or "off" or "system"
+window.Codebase = new App();

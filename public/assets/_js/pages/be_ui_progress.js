@@ -38,4 +38,4 @@ class pageProgress {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageProgress.init());
+Codebase.onLoad(() => pageProgress.init());

@@ -24,7 +24,7 @@ class pageCompOnboarding {
       document.querySelector('#modal-onboarding .js-slider').classList.remove('js-slider-enabled');
 
       // Re-init Slick Slider
-      Dashmix.helpers('jq-slick');
+      Codebase.helpers('jq-slick');
     });
   }
 
@@ -38,4 +38,4 @@ class pageCompOnboarding {
 }
 
 // Initialize when page loads
-Dashmix.onLoad(() => pageCompOnboarding.init());
+Codebase.onLoad(() => pageCompOnboarding.init());
