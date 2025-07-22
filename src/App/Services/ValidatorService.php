@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Services;
 
 use Framework\Validator;
+use Framework\Rules\RequiredRule;
 
 class ValidatorService
 {
@@ -14,13 +15,16 @@ class ValidatorService
     public function __construct()
     {
         $this->validator = new Validator();
+        $this->validator->add('required', new RequiredRule());
     }
 
     public function validateRegister(array $formData){
         $this->validator->validate($formData, [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6',
+            'signup-username' => ['required'],
+            'signup-email' => ['required'],
+            'signup-password' => ['required'],
+            'signup-password-confirm' => ['required'],
+            'signup-terms' => ['required'],
         ]);
     }
 
