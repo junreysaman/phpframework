@@ -64,7 +64,7 @@
               </div>
             </div>
             <div class="block-content block-content-full bg-body-light d-flex justify-content-between">
-              <a class="fs-sm fw-medium link-fx text-muted me-2 mb-1 d-inline-block" href="op_auth_signin3.html">
+              <a class="fs-sm fw-medium link-fx text-muted me-2 mb-1 d-inline-block" href="/login">
                 <i class="fa fa-arrow-left opacity-50 me-1"></i> Sign In
               </a>
               <a class="fs-sm fw-medium link-fx text-muted me-2 mb-1 d-inline-block" href="#" data-bs-toggle="modal" data-bs-target="#modal-terms">
