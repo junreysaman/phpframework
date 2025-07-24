@@ -1,6 +1,4 @@
 <?php include $this->resolve('partials/authentication/_header.php') ?>
-
-
  <!-- Main Container -->
  <main id="main-container">
 
