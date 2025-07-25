@@ -33,26 +33,44 @@
             <div class="block-content">
               <div class="form-floating mb-4">
                 <input type="text" class="form-control" id="signup-username" name="signup-username" placeholder="Enter your username">
-                <label class="form-label" for="signup-username">Username</label>
+                <?php if(array_key_exists('signup-username', $errors)): ?>
+                <div id="val-username-error" class="alert alert-danger mt-1 animated fadeIn bg-white p-2 text-sm text-red-500"><?php echo $errors['signup-username'][0]; ?></div>
+                <?php endif; ?>
+                <label class="form-label" for="signup-username">Username</label>   
               </div>
+              
               <div class="form-floating mb-4">
                 <input type="email" class="form-control" id="signup-email" name="signup-email" placeholder="Enter your email">
+                <?php if(array_key_exists('signup-email', $errors)): ?>
+                <div id="val-email-error" class="alert alert-danger mt-1 animated fadeIn bg-white p-2 text-sm text-red-500"><?php echo $errors['signup-email'][0]; ?></div>
+                <?php endif; ?>
                 <label class="form-label" for="signup-email">Email</label>
               </div>
               <div class="form-floating mb-4">
                 <input type="password" class="form-control" id="signup-password" name="signup-password" placeholder="Enter your password">
+                <?php if(array_key_exists('signup-password', $errors)): ?>
+                <div id="val-password-error" class="alert alert-danger mt-1 animated fadeIn bg-white p-2 text-sm text-red-500"><?php echo $errors['signup-password'][0]; ?></div>
+                <?php endif; ?>
                 <label class="form-label" for="signup-password">Password</label>
               </div>
               <div class="form-floating mb-4">
                 <input type="password" class="form-control" id="signup-password-confirm" name="signup-password-confirm" placeholder="Confirm password">
+                <?php if(array_key_exists('signup-password-confirm', $errors)): ?>
+                <div id="val-password-confirm-error" class="alert alert-danger mt-1 animated fadeIn bg-white p-2 text-sm text-red-500"><?php echo $errors['signup-password-confirm'][0]; ?></div>
+                <?php endif; ?>
                 <label class="form-label" for="signup-password-confirm">Confirm Password</label>
               </div>
               <div class="row">
                 <div class="col-sm-6 d-sm-flex align-items-center push">
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="signup-terms" name="signup-terms" value="1">
+                    
                     <label class="form-check-label" for="signup-terms">I agree to Terms</label>
+                    <?php if(array_key_exists('signup-terms', $errors)): ?>
+                    <div id="val-terms-error" class="alert alert-danger mt-1 animated fadeIn bg-white p-2 text-sm text-red-500"><?php echo $errors['signup-terms'][0]; ?></div>
+                    <?php endif; ?>
                   </div>
+                  
                 </div>
                 <div class="col-sm-6 text-sm-end push">
                   <button type="submit" class="btn btn-lg btn-alt-primary fw-semibold">

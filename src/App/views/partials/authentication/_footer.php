@@ -9,6 +9,14 @@
     <!-- jQuery (required for jQuery Validation plugins) -->
     <script src="assets/js/lib/jquery.min.js"></script>
 
+        <!-- Page JS Plugins -->
+        <script src="assets/js/plugins/select2/js/select2.full.min.js"></script>
+    <script src="assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="assets/js/plugins/jquery-validation/additional-methods.js"></script>
+
+    <!-- Page JS Helpers (Select2 plugin) -->
+    <script>Codebase.helpersOnLoad(['jq-select2']);</script>
+
     <!-- Page JS Plugins -->
     <script src="assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
 

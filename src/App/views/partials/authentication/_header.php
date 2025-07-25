@@ -26,6 +26,7 @@
     <!-- END Icons -->
 
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/js/plugins/select2/css/select2.css">
 
     <!-- Codebase framework -->
     <link rel="stylesheet" id="css-main" href="assets/css/codebase.min.css">
