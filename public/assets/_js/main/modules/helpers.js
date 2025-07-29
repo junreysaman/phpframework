@@ -21,16 +21,15 @@ export default class Helpers {
       'bs-tooltip': () => this.bsTooltip(),
       'bs-popover': () => this.bsPopover(),
 
-      // Codebase
-      'cb-toggle-class': () => this.cbToggleClass(),
-      'cb-year-copy': () => this.cbYearCopy(),
-      'cb-ripple': () => this.cbRipple(),
-      'cb-print': () => this.cbPrint(),
-      'cb-table-tools-sections': () => this.cbTableToolsSections(),
-      'cb-table-tools-checkable': () => this.cbTableToolsCheckable(),
+      // OneUI
+      'one-toggle-class': () => this.oneToggleClass(),
+      'one-year-copy': () => this.oneYearCopy(),
+      'one-ripple': () => this.oneRipple(),
+      'one-print': () => this.onePrint(),
+      'one-table-tools-sections': () => this.oneTableToolsSections(),
+      'one-table-tools-checkable': () => this.oneTableToolsCheckable(),
 
       // JavaScript
-      'js-ckeditor': () => this.jsCkeditor(),
       'js-ckeditor5': () => this.jsCkeditor5(),
       'js-simplemde': () => this.jsSimpleMDE(),
       'js-highlightjs': () => this.jsHighlightjs(),
@@ -47,9 +46,8 @@ export default class Helpers {
       'jq-easy-pie-chart': () => this.jqEasyPieChart(),
       'jq-maxlength': () => this.jqMaxlength(),
       'jq-rangeslider': () => this.jqRangeslider(),
-      'jq-pw-strength': () => this.jqPwStrength(),
       'jq-sparkline': () => this.jqSparkline(),
-      'jq-validation': () => this.jqValidation()
+      'jq-validation': () => this.jqValidation(),
     };
 
     if (helpers instanceof Array) {
@@ -137,7 +135,7 @@ export default class Helpers {
   /*
    * Toggle class on element click
    *
-   * Helpers.run('cb-toggle-class');
+   * Helpers.run('one-toggle-class');
    *
    * Example usage (on button click, "exampleClass" class is toggled on the element with id "elementID"):
    *
@@ -148,7 +146,7 @@ export default class Helpers {
    * <button type="button" class="btn btn-primary js-class-toggle" data-target="#elementID" data-class="exampleClass">Toggle</button>
    *
    */
-  static cbToggleClass() {
+  static oneToggleClass() {
     let elements = document.querySelectorAll('[data-toggle="class-toggle"]:not(.js-class-toggle-enabled), .js-class-toggle:not(.js-class-toggle-enabled)');
 
     elements.forEach(el => {
@@ -174,7 +172,7 @@ export default class Helpers {
   /*
    * Add the correct copyright year to an element
    *
-   * Helpers.run('cb-year-copy');
+   * Helpers.run('one-year-copy');
    *
    * Example usage (it will get populated with current year if empty or will append it to specified year if needed):
    *
@@ -182,7 +180,7 @@ export default class Helpers {
    * <span data-toggle="year-copy">2018</span>
    *
    */
-  static cbYearCopy() {
+  static oneYearCopy() {
     let elements = document.querySelectorAll('[data-toggle="year-copy"]:not(.js-year-copy-enabled)');
 
     elements.forEach(el => {
@@ -201,14 +199,14 @@ export default class Helpers {
   /*
    * Ripple effect fuctionality
    *
-   * Helpers.run('cb-ripple');
+   * Helpers.run('one-ripple');
    *
    * Example usage:
    *
    * <button type="button" class="btn btn-primary" data-toggle="click-ripple">Click Me!</button>
    *
    */
-  static cbRipple() {
+  static oneRipple() {
     let elements = document.querySelectorAll('[data-toggle="click-ripple"]:not(.js-click-ripple-enabled)');
 
     elements.forEach(el => {
@@ -263,10 +261,10 @@ export default class Helpers {
   /*
    * Print Page functionality
    *
-   * Helpers.run('cb-print');
+   * Helpers.run('one-print');
    *
    */
-  static cbPrint() {
+  static onePrint() {
     // Store all #page-container classes
     let lPage = document.getElementById('page-container');
     let pageCls = lPage.className;
@@ -286,14 +284,14 @@ export default class Helpers {
   /*
    * Table sections functionality
    *
-   * Helpers.run('cb-table-tools-sections');
+   * Helpers.run('one-table-tools-sections');
    *
    * Example usage:
    *
    * Please check out the Table Helpers page for complete markup examples
    *
    */
-  static cbTableToolsSections() {
+  static oneTableToolsSections() {
     let tables = document.querySelectorAll('.js-table-sections:not(.js-table-sections-enabled)');
 
     tables.forEach(table => {
@@ -333,14 +331,14 @@ export default class Helpers {
   /*
    * Checkable table functionality
    *
-   * Helpers.run('cb-table-tools-checkable');
+   * Helpers.run('one-table-tools-checkable');
    *
    * Example usage:
    *
    * Please check out the Table Helpers page for complete markup examples
    *
    */
-  static cbTableToolsCheckable() {
+  static oneTableToolsCheckable() {
     let tables = document.querySelectorAll('.js-table-checkable:not(.js-table-checkable-enabled)');
 
     tables.forEach(table => {
@@ -426,39 +424,6 @@ export default class Helpers {
    *
    ********************************************************************************************
    */
-
-  /*
-   * CKEditor init, for more examples you can check out http://ckeditor.com/
-   *
-   * Helpers.run('jsCkeditor');
-   *
-   * Example usage:
-   *
-   * <textarea id="js-ckeditor" name="ckeditor">Hello CKEditor!</textarea> or
-   * <div id="js-ckeditor-inline">Hello inline CKEditor!</div>
-   *
-   */
-  static jsCkeditor() {
-    let ckeditorInline = document.querySelector('#js-ckeditor-inline:not(.js-ckeditor-inline-enabled)');
-    let ckeditorFull = document.querySelector('#js-ckeditor:not(.js-ckeditor-enabled)');
-
-    // Init inline text editor
-    if (ckeditorInline) {
-      ckeditorInline.setAttribute('contenteditable', 'true');
-      CKEDITOR.inline('js-ckeditor-inline');
-
-      // Add .js-ckeditor-inline-enabled class to tag it as activated
-      ckeditorInline.classList.add('js-ckeditor-inline-enabled');
-    }
-
-    // Init full text editor
-    if (ckeditorFull) {
-      CKEDITOR.replace('js-ckeditor');
-
-      // Add .js-ckeditor-enabled class to tag it as activated
-      ckeditorFull.classList.add('js-ckeditor-enabled');
-    }
-  }
 
   /*
    * CKEditor 5 init, for more examples you can check out http://ckeditor.com/
@@ -928,42 +893,6 @@ export default class Helpers {
       jQuery(element).addClass('js-rangeslider-enabled').ionRangeSlider({
         input_values_separator: ';',
         skin: el.data('skin') || 'round'
-      });
-    });
-  }
-
-  /*
-   * Password Strength Meter, for more examples you can check out https://github.com/ablanco/jquery.pwstrength.bootstrap
-   *
-   * Helpers.run('jq-pw-strength');
-   *
-   * Example usage:
-   *
-   * <div class="js-pw-strength-container mb-4">
-   *   <label class="form-label" for="example-pw-strength1">Password</label>
-   *   <input type="password" class="js-pw-strength form-control" id="example-pw-strength1" name="example-pw-strength1">
-   *   <div class="js-pw-strength-progress pw-strength-progress mt-1"></div>
-   *   <p class="js-pw-strength-feedback form-text mb-0"></p>
-   * </div>
-   *
-   */
-  static jqPwStrength() {
-    // Init Password Strength Meter (with .js-pw-strength class)
-    jQuery('.js-pw-strength:not(.js-pw-strength-enabled)').each((index, element) => {
-      let el = jQuery(element);
-      let container = el.parents('.js-pw-strength-container');
-      let progress = jQuery('.js-pw-strength-progress', container);
-      let verdict = jQuery('.js-pw-strength-feedback', container);
-
-      // Add .js-pw-strength-enabled class to tag it as activated and init it
-      el.addClass('js-pw-strength-enabled').pwstrength({
-        ui: {
-          container: container,
-          viewports: {
-            progress: progress,
-            verdict: verdict
-          }
-        }
       });
     });
   }

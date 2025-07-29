@@ -12,7 +12,7 @@ class pageInstallation {
    */
   static initValidationInstallation() {
     // Load default options for jQuery Validation plugin
-    Codebase.helpers('jq-validation');
+    One.helpers('jq-validation');
 
     // Init Form Validation
     jQuery('.js-validation-installation').validate({
@@ -75,4 +75,4 @@ class pageInstallation {
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageInstallation.init());
+One.onLoad(() => pageInstallation.init());

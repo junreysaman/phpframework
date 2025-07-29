@@ -4,35 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title><?php echo $this->title ?> &amp; UI Framework</title>
+    <title>OneUI - Bootstrap 5 Admin Template &amp; UI Framework</title>
 
-    <meta name="description" content="Codebase - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave">
+    <meta name="description" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Codebase - Bootstrap 5 Admin Template &amp; UI Framework">
-    <meta property="og:site_name" content="Codebase">
-    <meta property="og:description" content="Codebase - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave">
+    <meta property="og:title" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework">
+    <meta property="og:site_name" content="OneUI">
+    <meta property="og:description" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
+    <link rel="shortcut icon" href="/assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/favicons/apple-touch-icon-180x180.png">
     <!-- END Icons -->
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/js/plugins/select2/css/select2.css">
-
-    <!-- Codebase framework -->
-    <link rel="stylesheet" id="css-main" href="assets/css/codebase.min.css">
+    <!-- OneUI framework -->
+    <link rel="stylesheet" id="css-main" href="assets/css/oneui.min.css">
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
-    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
+    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
     <!-- END Stylesheets -->
   </head>
 
@@ -46,7 +44,7 @@
         'remember-theme'                            Remembers active color theme and dark mode between pages using localStorage when set through
                                                     - Theme helper buttons [data-toggle="theme"],
                                                     - Layout helper buttons [data-toggle="layout" data-action="dark_mode_[on/off/toggle]"]
-                                                    - ..and/or Codebase.layout('dark_mode_[on/off/toggle]')
+                                                    - ..and/or One.layout('dark_mode_[on/off/toggle]')
 
       SIDEBAR & SIDE OVERLAY
 
@@ -70,13 +68,8 @@
 
       HEADER STYLE
 
-        ''                                          Classic Header style if no class is added
-        'page-header-modern'                        Modern Header style
-        'page-header-dark'                          Dark themed Header (works only with classic Header style)
-        'page-header-glass'                         Light themed Header with transparency by default
-                                                    (absolute position, perfect for light images underneath - solid light background on scroll if the Header is also set as fixed)
-        'page-header-glass page-header-dark'        Dark themed Header with transparency by default
-                                                    (absolute position, perfect for dark images underneath - solid dark background on scroll if the Header is also set as fixed)
+        ''                                          Light themed Header
+        'page-header-dark'                          Dark themed Header
 
       MAIN CONTENT LAYOUT
 
@@ -88,4 +81,4 @@
 
         'sidebar-dark page-header-dark dark-mode'   Enable dark mode (light sidebar/header is not supported with dark mode)
     -->
-    <div id="page-container" class="main-content-boxed">
+    <div id="page-container">

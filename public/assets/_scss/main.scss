@@ -1,5 +1,5 @@
 //
-// Codebase UI Framework
+// OneUI - UI Framework
 // --------------------------------------------------
 
 // Bootstrap functions
@@ -9,7 +9,7 @@
 @import 'custom/variables';
 
 // Custom Bootstrap variables overrides
-@import 'codebase/variables-bootstrap';
+@import 'oneui/variables-bootstrap';
 
 // Bootstrap variables
 @import 'bootstrap/variables';
@@ -21,15 +21,15 @@
 @import 'bootstrap/mixins';
 
 // Custom mixins and Bootstrap overrides
-@import 'codebase/mixins';
+@import 'oneui/mixins';
 
 // Bootstrap Utilities
 @import 'bootstrap/utilities';
 
 // Custom utilities and Bootstrap overrides
-@import 'codebase/utilities';
+@import 'oneui/utilities';
 
-// Bootstrap components (original)
+// Layout & components
 @import 'bootstrap/root';
 @import 'bootstrap/reboot';
 @import 'bootstrap/type';
@@ -69,49 +69,51 @@
 @import 'bootstrap/utilities/api';
 
 // Custom variables
-@import 'codebase/variables';
-@import 'codebase/variables-themes';
+@import 'oneui/variables';
+@import 'oneui/variables-themes';
 
 // Extend Bootstrap styles and override the ones..
 // ..we can't alter with the provided variables
-@import 'codebase/reboot';
-@import 'codebase/type';
-@import 'codebase/grid';
-@import 'codebase/tables';
-@import 'codebase/forms';
-@import 'codebase/buttons';
-@import 'codebase/transitions';
-@import 'codebase/dropdown';
-@import 'codebase/nav';
-@import 'codebase/card';
-@import 'codebase/breadcrumb';
-@import 'codebase/pagination';
-@import 'codebase/modal';
-@import 'codebase/print';
+@import "oneui/fonts";
+@import 'oneui/reboot';
+@import 'oneui/type';
+@import 'oneui/grid';
+@import 'oneui/tables';
+@import 'oneui/forms';
+@import 'oneui/buttons';
+@import 'oneui/transitions';
+@import 'oneui/dropdown';
+@import 'oneui/forms';
+@import 'oneui/nav';
+@import 'oneui/card';
+@import 'oneui/breadcrumb';
+@import 'oneui/pagination';
+@import 'oneui/modal';
+@import 'oneui/print';
 
-// Codebase layout
-@import 'codebase/layout';
-@import 'codebase/header';
-@import 'codebase/sidebar';
-@import 'codebase/side-overlay';
-@import 'codebase/layout-variations';
-@import 'codebase/hero';
-@import 'codebase/block';
+// Custom layout
+@import 'oneui/layout';
+@import 'oneui/header';
+@import 'oneui/sidebar';
+@import 'oneui/side-overlay';
+@import 'oneui/layout-variations';
+@import 'oneui/hero';
+@import 'oneui/block';
 
-// Codebase components
-@import 'codebase/page-loader';
-@import 'codebase/nav-main';
-@import 'codebase/images';
-@import 'codebase/lists';
-@import 'codebase/item';
-@import 'codebase/overlay';
-@import 'codebase/timeline';
-@import 'codebase/ribbon';
+// Custom components
+@import 'oneui/page-loader';
+@import 'oneui/nav-main';
+@import 'oneui/images';
+@import 'oneui/lists';
+@import 'oneui/item';
+@import 'oneui/overlay';
+@import 'oneui/timeline';
+@import 'oneui/ribbon';
 
 // Helpers
-@import 'codebase/helpers';
+@import 'oneui/helpers';
 
-// Third party components
+// Core third party components
 @import 'vendor/animate';
 @import 'vendor/fontawesome/fontawesome';
 @import 'vendor/fontawesome/regular';
@@ -120,30 +122,26 @@
 @import 'vendor/simple-line-icons';
 @import 'vendor/simplebar';
 
-// Third party plugins (style overrides)
+// Optional third party plugins (style overrides)
 @import 'vendor/bootstrap-datepicker';
 @import 'vendor/ckeditor';
 @import 'vendor/dropzone';
 @import 'vendor/datatables';
 @import 'vendor/easy-pie-chart';
 @import 'vendor/fullcalendar';
-@import 'vendor/highlightjs';
 @import 'vendor/ion-range-slider';
 @import 'vendor/jquery-sparkline';
 @import 'vendor/jvector-map';
-@import 'vendor/pw-strength';
 @import 'vendor/select2';
 @import 'vendor/simplemde';
 @import 'vendor/slick';
-@import 'vendor/simplebar';
-@import 'vendor/nestable2';
 @import 'vendor/flatpickr';
 
 // RTL Support
-@import 'codebase/rtl-support';
+@import 'oneui/rtl-support';
 
 // Dark mode
-@import 'codebase/dark-mode';
+@import 'oneui/dark-mode';
 
 // User styles (your own styles/overrides)
 @import 'custom/main';

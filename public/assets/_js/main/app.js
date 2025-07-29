@@ -6,7 +6,7 @@
  */
 
 // Import required modules
-import Template from './modules/template';
+import Template from './modules/template.js';
 
 // App extends Template
 export default class App extends Template {
@@ -62,4 +62,4 @@ export default class App extends Template {
 }
 
 // Create a new instance of App
-window.Codebase = new App();
+window.One = new App();

@@ -8,7 +8,7 @@
 // Imports
 import * as bootstrap from 'bootstrap';
 import SimpleBar from 'simplebar';
-import Helpers from './helpers';
+import Helpers from './helpers.js';
 
 // Assignments
 window.bootstrap = bootstrap;
@@ -53,7 +53,6 @@ export default class Template {
     this._uiHandleTheme();
     this._uiHandleDarkMode();
     this._uiHandleSidebars();
-    this._uiHandleHeader();
     this._uiHandleNav();
 
     // API Init
@@ -64,9 +63,9 @@ export default class Template {
     this.helpers([
       'bs-tooltip',
       'bs-popover',
-      'cb-toggle-class',
-      'cb-year-copy',
-      'cb-ripple',
+      'one-toggle-class',
+      'one-year-copy',
+      'one-ripple',
     ]);
 
     // Page Loader (hide it)
@@ -111,27 +110,6 @@ export default class Template {
           }
         }
       }
-    }
-  }
-
-  /*
-   * Handles header related classes
-   *
-   */
-  _uiHandleHeader() {
-    let self = this;
-
-    // If the header is fixed and has the glass style, add the related class on scrolling to add a background color to the header
-    if (self._lPage.classList.contains('page-header-glass') && self._lPage.classList.contains('page-header-fixed')) {
-      window.addEventListener('scroll', e => {
-        if (window.scrollY > 60) {
-          self._lPage.classList.add('page-header-scroll');
-        } else {
-          self._lPage.classList.remove('page-header-scroll');
-        }
-      });
-
-      window.dispatchEvent(new CustomEvent('scroll'));
     }
   }
 
@@ -189,24 +167,14 @@ export default class Template {
    * Page loading screen functionality
    *
    */
-  _uiHandlePageLoader(mode = 'hide', colorClass) {
+  _uiHandlePageLoader(mode = 'hide') {
     if (mode === 'show') {
       if (this._lpageLoader) {
-        if (colorClass) {
-          this._lpageLoader.className = '';
-          this._lpageLoader.classList.add(colorClass);
-        }
-
         this._lpageLoader.classList.add('show');
       } else {
         let pageLoader = document.createElement('div');
 
         pageLoader.id = 'page-loader';
-
-        if (colorClass) {
-          pageLoader.classList.add(colorClass);
-        }
-
         pageLoader.classList.add('show');
 
         this._lPage.insertBefore(pageLoader, this._lPage.firstChild);
@@ -231,21 +199,21 @@ export default class Template {
     // and header style to return to after any possible dark mode disabling
     if (mode === 'init' && !self._lPage.classList.contains('dark-mode')) {
       if (self._lPage.classList.contains('sidebar-dark')) {
-        localStorage.setItem('codebaseDefaultsSidebarDark', true);
+        localStorage.setItem('oneuiDefaultsSidebarDark', true);
       } else {
-        localStorage.removeItem('codebaseDefaultsSidebarDark');
+        localStorage.removeItem('oneuiDefaultsSidebarDark');
       }
 
       if (self._lPage.classList.contains('page-header-dark')) {
-        localStorage.setItem('codebaseDefaultsPageHeaderDark', true);
+        localStorage.setItem('oneuiDefaultsPageHeaderDark', true);
       } else {
-        localStorage.removeItem('codebaseDefaultsPageHeaderDark');
+        localStorage.removeItem('oneuiDefaultsPageHeaderDark');
       }
     }
 
     // If remember-theme class is added in #page-container
-    if (self._lPage.classList.contains('remember-theme')) {
-      let darkMode = localStorage.getItem('codebaseDarkMode') || false;
+    if (this._lPage.classList.contains('remember-theme')) {
+      let darkMode = localStorage.getItem('oneuiDarkMode') || false;
 
       if (mode === 'init') {
         if (darkMode) {
@@ -256,12 +224,12 @@ export default class Template {
           self._lPage.classList.remove('dark-mode');
         }
       } else if (mode === 'on') {
-        localStorage.setItem('codebaseDarkMode', true);
+        localStorage.setItem('oneuiDarkMode', true);
       } else if (mode === 'off') {
-        localStorage.removeItem('codebaseDarkMode');
+        localStorage.removeItem('oneuiDarkMode');
       }
     } else if (mode === 'init') {
-      localStorage.removeItem('codebaseDarkMode');
+      localStorage.removeItem('oneuiDarkMode');
     }
   }
 
@@ -276,7 +244,7 @@ export default class Template {
 
     // If remember theme is enabled
     if (rememberTheme) {
-      let themeName = localStorage.getItem('codebaseThemeName') || false;
+      let themeName = localStorage.getItem('oneuiThemeName') || false;
 
       // Update color theme
       if (themeName) {
@@ -286,7 +254,7 @@ export default class Template {
       // Update theme element
       themeEl = document.getElementById('css-theme');
     } else {
-      localStorage.removeItem('codebaseThemeName');
+      localStorage.removeItem('oneuiThemeName');
     }
 
     // Set the active color theme link as active
@@ -317,7 +285,7 @@ export default class Template {
 
         // If remember theme is enabled, save the new active color theme
         if (rememberTheme) {
-          localStorage.setItem('codebaseThemeName', themeName);
+          localStorage.setItem('oneuiThemeName', themeName);
         }
       });
     });
@@ -434,12 +402,12 @@ export default class Template {
       },
       sidebar_style_dark: () => {
         self._lPage.classList.add('sidebar-dark');
-        localStorage.setItem('codebaseDefaultsSidebarDark', true);
+        localStorage.setItem('oneuiDefaultsSidebarDark', true);
       },
       sidebar_style_light: () => {
         self._lPage.classList.remove('sidebar-dark');
         self._lPage.classList.remove('dark-mode');
-        localStorage.removeItem('codebaseDefaultsSidebarDark');
+        localStorage.removeItem('oneuiDefaultsSidebarDark');
       },
       side_overlay_toggle: () => {
         if (self._lPage.classList.contains('side-overlay-o')) {
@@ -470,36 +438,6 @@ export default class Template {
       side_overlay_mode_hover_off: () => {
         self._lPage.classList.remove('side-overlay-hover');
       },
-      header_glass_toggle: () => {
-        if (self._lPage.classList.contains('page-header-glass')) {
-          self._uiApiLayout('header_glass_off');
-        } else {
-          self._uiApiLayout('header_glass_on');
-        }
-      },
-      header_glass_on: () => {
-        self._lPage.classList.add('page-header-glass');
-        self._lPage.classList.remove('page-header-modern');
-        self._uiHandleHeader();
-      },
-      header_glass_off: () => {
-        self._lPage.classList.remove('page-header-glass');
-        self._uiHandleHeader();
-      },
-      header_modern_toggle: () => {
-        if (self._lPage.classList.contains('page-header-modern')) {
-          self._uiApiLayout('header_modern_off');
-        } else {
-          self._uiApiLayout('header_modern_on');
-        }
-      },
-      header_modern_on: () => {
-        self._lPage.classList.add('page-header-modern');
-        self._lPage.classList.remove('page-header-glass');
-      },
-      header_modern_off: () => {
-        self._lPage.classList.remove('page-header-modern');
-      },
       header_mode_toggle: () => {
         self._lPage.classList.toggle('page-header-fixed');
       },
@@ -518,12 +456,12 @@ export default class Template {
       },
       header_style_dark: () => {
         self._lPage.classList.add('page-header-dark');
-        localStorage.setItem('codebaseDefaultsPageHeaderDark', true);
+        localStorage.setItem('oneuiDefaultsPageHeaderDark', true);
       },
       header_style_light: () => {
         self._lPage.classList.remove('page-header-dark');
         self._lPage.classList.remove('dark-mode');
-        localStorage.removeItem('codebaseDefaultsPageHeaderDark');
+        localStorage.removeItem('oneuiDefaultsPageHeaderDark');
       },
       header_search_on: () => {
         self._lHeaderSearch.classList.add('show');
@@ -560,11 +498,11 @@ export default class Template {
         this._uiHandleDarkMode('on');
       },
       dark_mode_off: () => {
-        if (!localStorage.getItem('codebaseDefaultsSidebarDark')) {
+        if (!localStorage.getItem('oneuiDefaultsSidebarDark')) {
           self._lPage.classList.remove('sidebar-dark');
         }
 
-        if (!localStorage.getItem('codebaseDefaultsPageHeaderDark')) {
+        if (!localStorage.getItem('oneuiDefaultsPageHeaderDark')) {
           self._lPage.classList.remove('page-header-dark');
         }
 

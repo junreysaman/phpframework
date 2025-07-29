@@ -4,15 +4,14 @@
  *  Description: Custom JS code used in Sign Up Page
  */
 
-// Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
 class pageAuthSignUp {
   /*
-   * Init Sign Up Form Validation
+   * Init Sign Up Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
    *
    */
-  static initValidationSignUp() {
+  static initValidation() {
     // Load default options for jQuery Validation plugin
-    Codebase.helpers('jq-validation');
+    One.helpers('jq-validation');
 
     // Init Form Validation
     jQuery('.js-validation-signup').validate({
@@ -62,9 +61,9 @@ class pageAuthSignUp {
    *
    */
   static init() {
-    this.initValidationSignUp();
+    this.initValidation();
   }
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageAuthSignUp.init());
+One.onLoad(() => pageAuthSignUp.init());

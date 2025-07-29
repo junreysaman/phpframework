@@ -92,4 +92,4 @@ class pageAuthTwoFactor {
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageAuthTwoFactor.init());
+One.onLoad(() => pageAuthTwoFactor.init());

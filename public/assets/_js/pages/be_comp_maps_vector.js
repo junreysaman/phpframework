@@ -10,7 +10,7 @@ let mapOptions = {
   backgroundColor: '#ffffff',
   regionStyle: {
     initial: {
-      fill: '#1F75D5',
+      fill: '#5490d2',
       'fill-opacity': 1,
       stroke: 'none',
       'stroke-width': 0,
@@ -151,4 +151,4 @@ class pageCompMapsVector {
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageCompMapsVector.init());
+One.onLoad(() => pageCompMapsVector.init());

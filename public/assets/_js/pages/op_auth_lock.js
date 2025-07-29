@@ -4,15 +4,14 @@
  *  Description: Custom JS code used in Lock Page
  */
 
-// Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
 class pageAuthLock {
   /*
-   * Init Lock Form Validation
+   * Init Lock Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
    *
    */
-  static initValidationLock() {
+  static initValidation() {
     // Load default options for jQuery Validation plugin
-    Codebase.helpers('jq-validation');
+    One.helpers('jq-validation');
 
     // Init Form Validation
     jQuery('.js-validation-lock').validate({
@@ -35,9 +34,9 @@ class pageAuthLock {
    *
    */
   static init() {
-    this.initValidationLock();
+    this.initValidation();
   }
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageAuthLock.init());
+One.onLoad(() => pageAuthLock.init());

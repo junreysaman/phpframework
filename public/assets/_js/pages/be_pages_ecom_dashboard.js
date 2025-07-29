@@ -1,111 +1,100 @@
 /*
  *  Document   : be_pages_ecom_dashboard.js
  *  Author     : pixelcave
- *  Description: Custom JS code used in e-Commerce Dashboard Page
+ *  Description: Custom JS code used in eCommerce Dashboard Page
  */
 
-class pageDashboardEcom {
+// Chart.js Charts, for more examples you can check out http://www.chartjs.org/docs
+class pageEcomDashboard {
   /*
-   * Chart.js Charts, for more examples you can check out http://www.chartjs.org/docs
+   * Init Charts
    *
    */
-  static initEcomChartJS() {
+  static initOverviewChart() {
     // Set Global Chart.js configuration
     Chart.defaults.color = '#818d96';
-    Chart.defaults.scale.grid.color = "transparent";
-    Chart.defaults.scale.grid.zeroLineColor = "transparent";
-    Chart.defaults.scale.display = false;
+    Chart.defaults.scale.grid.lineWidth = 0;
     Chart.defaults.scale.beginAtZero = true;
-    Chart.defaults.elements.line.borderWidth = 2;
-    Chart.defaults.elements.point.radius = 5;
-    Chart.defaults.elements.point.hoverRadius = 7;
+    Chart.defaults.elements.point.radius = 0;
+    Chart.defaults.elements.point.hoverRadius = 0;
     Chart.defaults.plugins.tooltip.radius = 3;
-    Chart.defaults.plugins.legend.display = false;
+    Chart.defaults.plugins.legend.labels.boxWidth = 12;
 
-    // Chart Containers
-    let chartEcomEarningsCon = document.getElementById('js-chartjs-ecom-dashboard-earnings');
-    let chartEcomOrdersCon = document.getElementById('js-chartjs-ecom-dashboard-orders');
+    // Get Chart Container
+    let chartOverviewCon = document.getElementById('js-chartjs-overview');
 
-    // Charts Variables
-    let chartEcomOrders, chartEcomEarnings;
+    // Set Chart Variables
+    let chartOverview, chartOverviewOptions, chartOverviewData;
 
-    // Charts Data
-    let chartEcomEarningsData = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
-      datasets: [
-        {
-          label: 'Earnings',
-          fill: true,
-          backgroundColor: 'rgba(188,38,211,.25)',
-          borderColor: 'rgba(188,38,211,1)',
-          pointBackgroundColor: 'rgba(188,38,211,1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(188,38,211,1)',
-          data: [1780, 2440, 3252, 2109, 1892, 3890, 1820]
-        }
-      ]
-    };
-
-    let chartEcomOrdersData = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
-      datasets: [
-        {
-          label: 'Orders',
-          fill: true,
-          backgroundColor: 'rgba(112,178,156,.25)',
-          borderColor: 'rgba(112,178,156,1)',
-          pointBackgroundColor: 'rgba(112,178,156,1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(112,178,156,1)',
-          data: [20, 27, 40, 19, 23, 38, 16]
-        }
-      ]
-    };
-
-    // Init Charts
-    if (chartEcomEarningsCon !== null) {
-      chartEcomEarnings = new Chart(chartEcomEarningsCon, {type: 'line', data: chartEcomEarningsData, options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          tension: .4,
-          scales: {
-            y: {
-              suggestedMin: 0,
-              suggestedMax: 4300
+    // Overview Chart Options
+    chartOverviewOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      tension: .4,
+      scales: {
+          x: {
+            grid: {
+              drawBorder: false
             }
           },
-          interaction: {
-            intersect: false,
-          },
-          plugins: {
-            tooltip: {
-              callbacks: {
-                label: function (context) {
-                  return context.dataset.label + ': $' + context.parsed.y;
-                }
-              }
+          y: {
+            grid: {
+              drawBorder: false
+            },
+            suggestedMin: 0,
+            suggestedMax: 500
+          }
+      },
+      interaction: {
+        intersect: false,
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return ' $' + context.parsed.y;
             }
           }
-        }});
-    }
+        }
+      }
+    };
 
-    if (chartEcomOrdersCon !== null) {
-      chartEcomOrders = new Chart(chartEcomOrdersCon, {type: 'line', data: chartEcomOrdersData, options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          tension: .4,
-          scales: {
-            y: {
-              suggestedMin: 0,
-              suggestedMax: 60
-            }
-          },
-          interaction: {
-            intersect: false,
-          },
-        }});
+    // Overview Chart Data
+    chartOverviewData = {
+      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      datasets: [
+        {
+          label: 'This Week',
+          fill: true,
+          backgroundColor: 'rgba(132, 94, 247, .3)',
+          borderColor: 'transparent',
+          pointBackgroundColor: 'rgba(132, 94, 247, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(132, 94, 247, 1)',
+          data: [390, 290, 410, 290, 450, 180, 360]
+        },
+        {
+          label: 'Last Week',
+          fill: true,
+          backgroundColor: 'rgba(0, 0, 0, .15)',
+          borderColor: 'transparent',
+          pointBackgroundColor: 'rgba(0, 0, 0, .3)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(0, 0, 0, .3)',
+          data: [180, 360, 236, 320, 210, 295, 260]
+        }
+      ]
+    };
+
+    // Init Overview Chart
+    if (chartOverviewCon !== null) {
+      chartOverview = new Chart(chartOverviewCon, {
+        type: 'line',
+        data: chartOverviewData,
+        options: chartOverviewOptions
+      });
     }
   }
 
@@ -114,9 +103,9 @@ class pageDashboardEcom {
    *
    */
   static init() {
-    this.initEcomChartJS();
+    this.initOverviewChart();
   }
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageDashboardEcom.init());
+One.onLoad(() => pageEcomDashboard.init());

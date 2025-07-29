@@ -6,20 +6,25 @@ $simple-line-icon-prefix: "si-" !default;
 // Fonts
 @if $simple-line-font-family == "simple-line-icons" {
   @font-face {
-    font-family: '#{$simple-line-font-family}';
-    src:    url('#{$simple-line-font-path}Simple-Line-Icons.eot?v=2.4.0');
-    src:    url('#{$simple-line-font-path}Simple-Line-Icons.eot?v=2.4.0#iefix') format('embedded-opentype'),
-      url('#{$simple-line-font-path}Simple-Line-Icons.woff2?v=2.4.0') format('woff2'),
-      url('#{$simple-line-font-path}Simple-Line-Icons.ttf?v=2.4.0') format('truetype'),
-      url('#{$simple-line-font-path}Simple-Line-Icons.woff?v=2.4.0') format('woff'),
-      url('#{$simple-line-font-path}Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg');
+    font-family: "#{$simple-line-font-family}";
+    src: url("#{$simple-line-font-path}Simple-Line-Icons.eot?v=2.4.0");
+    src: url("#{$simple-line-font-path}Simple-Line-Icons.eot?v=2.4.0#iefix")
+        format("embedded-opentype"),
+      url("#{$simple-line-font-path}Simple-Line-Icons.woff2?v=2.4.0")
+        format("woff2"),
+      url("#{$simple-line-font-path}Simple-Line-Icons.ttf?v=2.4.0")
+        format("truetype"),
+      url("#{$simple-line-font-path}Simple-Line-Icons.woff?v=2.4.0")
+        format("woff"),
+      url("#{$simple-line-font-path}Simple-Line-Icons.svg?v=2.4.0#simple-line-icons")
+        format("svg");
     font-weight: normal;
     font-style: normal;
   }
 }
 
 .si {
-  font-family: '#{$simple-line-font-family}';
+  font-family: "#{$simple-line-font-family}";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -793,25 +798,25 @@ $simple-line-icon-prefix: "si-" !default;
 }
 
 .#{$simple-line-icon-prefix}bar-chart:before {
-  content:"\e077";
+  content: "\e077";
 }
 
-.#{$simple-line-icon-prefix}camcorder:before{
-  content:"\e07e";
+.#{$simple-line-icon-prefix}camcorder:before {
+  content: "\e07e";
 }
 
-.#{$simple-line-icon-prefix}emoticon-smile:before{
-  content:"\e021";
+.#{$simple-line-icon-prefix}emoticon-smile:before {
+  content: "\e021";
 }
 
-.#{$simple-line-icon-prefix}eyeglasses:before{
-  content:"\e01d";
+.#{$simple-line-icon-prefix}eyeglasses:before {
+  content: "\e01d";
 }
 
-.#{$simple-line-icon-prefix}moustache:before{
-  content:"\e014";
+.#{$simple-line-icon-prefix}moustache:before {
+  content: "\e014";
 }
 
-.#{$simple-line-icon-prefix}pointer:before{
-  content:"\e096";
+.#{$simple-line-icon-prefix}pointer:before {
+  content: "\e096";
 }

@@ -4,121 +4,254 @@
  *  Description: Custom JS code used in Dashboard Page
  */
 
+// Chart.js Charts, for more examples you can check out http://www.chartjs.org/docs
 class pageDashboard {
   /*
-   * Chart.js Charts, for more examples you can check out http://www.chartjs.org/docs
+   * Init Charts
    *
    */
-  static initDashboardChartJS() {
+  static initCharts() {
     // Set Global Chart.js configuration
     Chart.defaults.color = '#818d96';
-    Chart.defaults.scale.grid.color = "transparent";
-    Chart.defaults.scale.grid.zeroLineColor = "transparent";
-    Chart.defaults.scale.display = false;
+    Chart.defaults.scale.grid.lineWidth = 0;
     Chart.defaults.scale.beginAtZero = true;
-    Chart.defaults.elements.line.borderWidth = 2;
-    Chart.defaults.elements.point.radius = 5;
-    Chart.defaults.elements.point.hoverRadius = 7;
+    Chart.defaults.datasets.bar.maxBarThickness = 45;
+    Chart.defaults.elements.bar.borderRadius = 4;
+    Chart.defaults.elements.bar.borderSkipped = false;
+    Chart.defaults.elements.point.radius = 0;
+    Chart.defaults.elements.point.hoverRadius = 0;
     Chart.defaults.plugins.tooltip.radius = 3;
-    Chart.defaults.plugins.legend.display = false;
+    Chart.defaults.plugins.legend.labels.boxWidth = 10;
 
-    // Chart Containers
-    let chartDashboardLinesCon = document.getElementById('js-chartjs-dashboard-lines');
-    let chartDashboardLinesCon2 = document.getElementById('js-chartjs-dashboard-lines2');
+    // Get Chart Containers
+    let chartEarningsCon = document.getElementById('js-chartjs-earnings');
+    let chartTotalOrdersCon = document.getElementById('js-chartjs-total-orders');
+    let chartTotalEarningsCon = document.getElementById('js-chartjs-total-earnings');
+    let chartNewCustomersCon = document.getElementById('js-chartjs-new-customers');
 
-    // Chart Variables
-    let chartDashboardLines, chartDashboardLines2;
+    // Set Chart and Chart Data variables
+    let chartEarnings, chartTotalOrders, chartTotalEarnings, chartNewCustomers;
 
-    // Lines Charts Data
-    let chartDashboardLinesData = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
-      datasets: [
-        {
-          label: 'This Week',
-          fill: true,
-          backgroundColor: 'rgba(2, 132, 199, .45)',
-          borderColor: 'rgba(2, 132, 199, 1)',
-          pointBackgroundColor: 'rgba(2, 132, 199, 1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(2, 132, 199, 1)',
-          data: [25, 21, 23, 38, 36, 35, 39]
-        }
-      ]
-    };
-
-    let chartDashboardLinesOptions = {
-      responsive: true,
-      maintainAspectRatio: false,
-      tension: .4,
-      scales: {
-        y: {
-          suggestedMin: 0,
-          suggestedMax: 50
-        }
-      },
-      interaction: {
-        intersect: false,
-      },
-      plugins: {
-        tooltip: {
-          callbacks: {
-            label: function (context) {
-              return ' ' + context.parsed.y + ' Sales';
+    // Init Chart Earnings
+    if (chartEarningsCon !== null) {
+      chartEarnings = new Chart(chartEarningsCon, {
+        type: 'bar',
+        data: {
+          labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+          datasets: [
+            {
+              label: 'This Week',
+              fill: true,
+              backgroundColor: 'rgba(100, 116, 139, .7)',
+              borderColor: 'transparent',
+              pointBackgroundColor: 'rgba(100, 116, 139, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(100, 116, 139, 1)',
+              data: [716, 628, 1056, 560, 956, 890, 790]
+            },
+            {
+              label: 'Last Week',
+              fill: true,
+              backgroundColor: 'rgba(100, 116, 139, .15)',
+              borderColor: 'transparent',
+              pointBackgroundColor: 'rgba(100, 116, 139, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(100, 116, 139, 1)',
+              data: [1160, 923, 1052, 1300, 880, 926, 963]
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              display: false,
+              grid: {
+                drawBorder: false
+              }
+            },
+            y: {
+              display: false,
+              grid: {
+                drawBorder: false
+              }
+            }
+          },
+          interaction: {
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              labels: {
+                boxHeight: 10,
+                font: {
+                  size: 14
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': $' + context.parsed.y;
+                }
+              }
             }
           }
         }
-      }
-    };
-
-    let chartDashboardLinesData2 = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
-      datasets: [
-        {
-          label: 'This Week',
-          fill: true,
-          backgroundColor: 'rgba(101, 163, 13, .45)',
-          borderColor: 'rgba(101, 163, 13, 1)',
-          pointBackgroundColor: 'rgba(101, 163, 13, 1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(101, 163, 13, 1)',
-          data: [190, 219, 235, 320, 360, 354, 390]
-        }
-      ]
-    };
-
-    let chartDashboardLinesOptions2 = {
-      responsive: true,
-      maintainAspectRatio: false,
-      tension: .4,
-      scales: {
-        y: {
-          suggestedMin: 0,
-          suggestedMax: 480
-        }
-      },
-      interaction: {
-        intersect: false,
-      },
-      plugins: {
-        tooltip: {
-          callbacks: {
-            label: function (context) {
-              return ' $' + context.parsed.y;
-            }
-          }
-        }
-      }
-    };
-
-    // Init Charts
-    if (chartDashboardLinesCon !== null) {
-      chartDashboardLines = new Chart(chartDashboardLinesCon, {type: 'line', data: chartDashboardLinesData, options: chartDashboardLinesOptions});
+      });
     }
 
-    if (chartDashboardLinesCon2 !== null) {
-      chartDashboardLines2 = new Chart(chartDashboardLinesCon2, {type: 'line', data: chartDashboardLinesData2, options: chartDashboardLinesOptions2});
+    // Init Chart Total Orders
+    if (chartTotalOrdersCon !== null) {
+      chartTotalOrders = new Chart(chartTotalOrdersCon, {
+        type: 'line',
+        data: {
+          labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+          datasets: [
+            {
+              label: 'Total Orders',
+              fill: true,
+              backgroundColor: 'rgba(220, 38, 38, .15)',
+              borderColor: 'transparent',
+              pointBackgroundColor: 'rgba(220, 38, 38, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(220, 38, 38, 1)',
+              data: [33, 29, 32, 37, 38, 30, 34, 28, 43, 45, 26, 45, 49, 39],
+            }
+          ]
+        },
+        options: {
+          maintainAspectRatio: false,
+          tension: .4,
+          scales: {
+            x: {
+              display: false
+            },
+            y: {
+              display: false
+            }
+          },
+          interaction: {
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return ' ' + context.parsed.y + ' Orders';
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Init Chart Total Earnings
+    if (chartTotalEarningsCon !== null) {
+      chartTotalEarnings = new Chart(chartTotalEarningsCon, {
+        type: 'line',
+        data: {
+          labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+          datasets: [
+            {
+              label: 'Total Earnings',
+              fill: true,
+              backgroundColor: 'rgba(101, 163, 13, .15)',
+              borderColor: 'transparent',
+              pointBackgroundColor: 'rgba(101, 163, 13, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(101, 163, 13, 1)',
+              data: [716, 1185, 750, 1365, 956, 890, 1200, 968, 1158, 1025, 920, 1190, 720, 1352],
+            }
+          ]
+        },
+        options: {
+          maintainAspectRatio: false,
+          tension: .4,
+          scales: {
+            x: {
+              display: false
+            },
+            y: {
+              display: false
+            }
+          },
+          interaction: {
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return ' $' + context.parsed.y;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Init Chart New Customers
+    if (chartNewCustomersCon !== null) {
+      chartNewCustomers = new Chart(chartNewCustomersCon, {
+        type: 'line',
+        data: {
+          labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+          datasets: [
+            {
+              label: 'Total Orders',
+              fill: true,
+              backgroundColor: 'rgba(101, 163, 13, .15)',
+              borderColor: 'transparent',
+              pointBackgroundColor: 'rgba(101, 163, 13, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(101, 163, 13, 1)',
+              data: [25, 15, 36, 14, 29, 19, 36, 41, 28, 26, 29, 33, 23, 41],
+            }
+          ]
+        },
+        options: {
+          maintainAspectRatio: false,
+          tension: .4,
+          scales: {
+            x: {
+              display: false
+            },
+            y: {
+              display: false
+            }
+          },
+          interaction: {
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return ' ' + context.parsed.y + ' Customers';
+                }
+              }
+            }
+          }
+        }
+      });
     }
   }
 
@@ -127,9 +260,9 @@ class pageDashboard {
    *
    */
   static init() {
-    this.initDashboardChartJS();
+    this.initCharts();
   }
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageDashboard.init());
+One.onLoad(() => pageDashboard.init());

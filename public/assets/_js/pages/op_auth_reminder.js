@@ -4,15 +4,14 @@
  *  Description: Custom JS code used in Password Reminder Page
  */
 
-// Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
 class pageAuthReminder {
   /*
-   * Init Password Reminder Form Validation
+   * Init Password Reminder Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
    *
    */
-  static initValidationReminder() {
+  static initValidation() {
     // Load default options for jQuery Validation plugin
-    Codebase.helpers('jq-validation');
+    One.helpers('jq-validation');
 
     // Init Form Validation
     jQuery('.js-validation-reminder').validate({
@@ -35,9 +34,9 @@ class pageAuthReminder {
    *
    */
   static init() {
-    this.initValidationReminder();
+    this.initValidation();
   }
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageAuthReminder.init());
+One.onLoad(() => pageAuthReminder.init());

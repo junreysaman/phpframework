@@ -1,5 +1,5 @@
 //
-// DropzoneJS
+// Dropzone
 //
 // Overwrite/Extend styles
 // --------------------------------------------------
@@ -7,7 +7,7 @@
 .dropzone {
   min-height: 200px;
   background-color: $body-bg-light;
-  border: .125rem dashed $input-border-color;
+  border: 0.125rem dashed $input-border-color;
   border-radius: $border-radius-lg;
 
   .dz-message {

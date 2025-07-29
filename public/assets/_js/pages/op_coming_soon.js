@@ -10,14 +10,14 @@ class pageComingSoon {
    *
    */
   static countdown() {
-    jQuery('.js-countdown').countdown((new Date().getFullYear() + 2) + '/02/01', e => {
-      jQuery(e.currentTarget).html(e.strftime('<div class="row items-push push text-center">'
-              + '<div class="col-6 col-md-3"><div class="fs-1 fw-bold text-white">%-D</div><div class="fs-sm fw-medium text-white-50">DAYS</div></div>'
-              + '<div class="col-6 col-md-3"><div class="fs-1 fw-bold text-white">%H</div><div class="fs-sm fw-medium text-white-50">HOURS</div></div>'
-              + '<div class="col-6 col-md-3"><div class="fs-1 fw-bold text-white">%M</div><div class="fs-sm fw-medium text-white-50">MINUTES</div></div>'
-              + '<div class="col-6 col-md-3"><div class="fs-1 fw-bold text-white">%S</div><div class="fs-sm fw-medium text-white-50">SECONDS</div></div>'
-              + '</div>'
-              ));
+    jQuery('.js-countdown').countdown((new Date().getFullYear() + 2) + '/01/15', e => {
+      jQuery(e.currentTarget).html(e.strftime('<div class="row items-push py-3 text-center">'
+        + '<div class="col-6 col-md-3"><div class="fs-1 fw-bold text-white">%-D</div><div class="fs-sm fw-bold text-muted">DAYS</div></div>'
+        + '<div class="col-6 col-md-3"><div class="fs-1 fw-bold text-white">%H</div><div class="fs-sm fw-bold text-muted">HOURS</div></div>'
+        + '<div class="col-6 col-md-3"><div class="fs-1 fw-bold text-white">%M</div><div class="fs-sm fw-bold text-muted">MINUTES</div></div>'
+        + '<div class="col-6 col-md-3"><div class="fs-1 fw-bold text-white">%S</div><div class="fs-sm fw-bold text-muted">SECONDS</div></div>'
+        + '</div>'
+      ));
     });
   }
 
@@ -31,4 +31,4 @@ class pageComingSoon {
 }
 
 // Initialize when page loads
-Codebase.onLoad(() => pageComingSoon.init());
+One.onLoad(() => pageComingSoon.init());

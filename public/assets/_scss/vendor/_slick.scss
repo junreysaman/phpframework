@@ -21,7 +21,7 @@
     margin-bottom: 0;
 
     .slick-dots {
-      bottom: .625rem;
+      bottom: 0.625rem;
     }
   }
 
@@ -36,15 +36,15 @@
     width: 2.5rem;
     height: 3.75rem;
     text-align: center;
-    background-color: rgba(0,0,0,.03);
+    background-color: rgba(0, 0, 0, 0.03);
     z-index: 2;
 
     &:hover {
-      background-color: rgba(0,0,0,.15);
+      background-color: rgba(0, 0, 0, 0.15);
     }
 
     &::before {
-      font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Pro';
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro";
       font-weight: 600;
       font-size: 28px;
       line-height: 28px;
@@ -56,7 +56,7 @@
     left: 0;
 
     &::before {
-      content: '\f104';
+      content: "\f104";
     }
   }
 
@@ -64,17 +64,17 @@
     right: 0;
 
     &::before {
-      content: '\f105';
+      content: "\f105";
     }
   }
 
   &.slick-nav-white {
     .slick-prev,
     .slick-next {
-      background-color: rgba(255,255,255,.5);
+      background-color: rgba(255, 255, 255, 0.5);
 
       &:hover {
-        background-color: rgba(255,255,255,1);
+        background-color: rgba(255, 255, 255, 1);
       }
 
       &:before {
@@ -86,10 +86,10 @@
   &.slick-nav-black {
     .slick-prev,
     .slick-next {
-      background-color: rgba(0,0,0,.25);
+      background-color: rgba(0, 0, 0, 0.25);
 
       &:hover {
-        background-color: rgba(0,0,0,1);
+        background-color: rgba(0, 0, 0, 1);
       }
 
       &::before {
@@ -102,7 +102,7 @@
     .slick-prev,
     .slick-next {
       opacity: 0;
-      transition: opacity .25s ease-out;
+      transition: opacity 0.25s ease-out;
     }
 
     &:hover {
