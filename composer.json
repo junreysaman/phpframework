@@ -17,5 +17,8 @@
             "src/App/config/Routes.php",
             "src/App/config/Middleware.php"
         ]
+    },
+    "scripts": {
+        "phpframework": "php cli.php"
     }
 }
