@@ -1,18 +1,12 @@
-<!--
-        OneUI JS
+  <!-- Import Js Files -->
+  <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+  <script src="assets/js/theme/app.init.js"></script>
+  <script src="assets/js/theme/theme.js"></script>
+  <script src="assets/js/theme/app.min.js"></script>
 
-        Core libraries and functionality
-        webpack is putting everything together at assets/_js/main/app.js
-    -->
-    <script src="assets/js/oneui.app.min.js"></script>
+  <!-- solar icons -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
 
-    <!-- jQuery (required for jQuery Validation plugin) -->
-    <script src="assets/js/lib/jquery.min.js"></script>
-
-    <!-- Page JS Plugins -->
-    <script src="assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
-
-    <!-- Page JS Code -->
-    <script src="assets/js/pages/op_auth_signup.min.js"></script>
-  </body>
-</html>
+</html> 

@@ -1,200 +1,236 @@
 <?php include $this->resolve('partials/authentication/_header.php') ?>
 
-<!-- Main Container -->
-      <main id="main-container">
-        <!-- Page Content -->
-        <div class="bg-primary-dark">
-          <div class="row g-0 bg-primary-dark-op">
-            <!-- Meta Info Section -->
-            <div class="hero-static col-lg-4 d-none d-lg-flex flex-column justify-content-center">
-              <div class="p-4 p-xl-5 flex-grow-1 d-flex align-items-center">
-                <div class="w-100">
-                  <a class="link-fx fw-semibold fs-2 text-white" href="index.html">
-                    <?php echo $project ?>
-                  </a>
-                  <p class="text-white-75 me-xl-8 mt-2">
-                    <?php echo $desc ?>
-                </div>
-              </div>
-              <div class="p-4 p-xl-5 d-xl-flex justify-content-between align-items-center fs-sm">
-                <p class="fw-medium text-white-50 mb-0">
-                  <strong><?php echo $project ?></strong> &copy; <span data-toggle="year-copy"><?php echo $year ?></span>
-                </p>
-                <ul class="list list-inline mb-0 py-2">
-                  <li class="list-inline-item">
-                    <a class="text-white-75 fw-medium" href="javascript:void(0)">Legal</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="text-white-75 fw-medium" href="javascript:void(0)">Contact</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="text-white-75 fw-medium" href="javascript:void(0)">Terms</a>
-                  </li>
-                </ul>
-              </div>
+<div id="main-wrapper" class="auth-customizer-none">
+    <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
+      <div class="position-relative z-index-5">
+        <div class="row">
+          <div class="col-xl-7 col-xxl-8">
+            <a href="./main/index.html" class="text-nowrap logo-img d-block px-4 py-9 w-100">
+              <img src="assets/images/logos/dark-logo.svg" class="dark-logo" alt="Logo-Dark" />
+              <img src="assets/images/logos/light-logo.svg" class="light-logo" alt="Logo-light" />
+            </a>
+            <div class="d-none d-xl-flex align-items-center justify-content-center h-n80">
+              <img src="assets/images/backgrounds/login-security.svg" alt="modernize-img" class="img-fluid" width="500">
             </div>
-            <!-- END Meta Info Section -->
-
-            <!-- Main Section -->
-            <div class="hero-static col-lg-8 d-flex flex-column align-items-center bg-body-extra-light">
-              <div class="p-3 w-100 d-lg-none text-center">
-                <a class="link-fx fw-semibold fs-3 text-dark" href="index.html">
-                  OneUI
-                </a>
-              </div>
-              <div class="p-4 w-100 flex-grow-1 d-flex align-items-center">
-                <div class="w-100">
-                  <!-- Header -->
-                  <div class="text-center mb-5">
-                    <p class="mb-3">
-                      <i class="fa fa-2x fa-circle-notch text-primary-light"></i>
-                    </p>
-                    <h1 class="fw-bold mb-2">
-                      Create Account
-                    </h1>
-                    <p class="fw-medium text-muted">
-                      Get your access today in one easy step
-                    </p>
-                  </div>
-                  <!-- END Header -->
-
-                  <!-- Sign Up Form -->
-                  <!-- jQuery Validation (.js-validation-signup class is initialized in js/pages/op_auth_signup.min.js which was auto compiled from _js/pages/op_auth_signup.js) -->
-                  <!-- For more info and examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                  <div class="row g-0 justify-content-center">
-                    <div class="col-sm-8 col-xl-4">
-                      <form action="/register" method="POST" class="">
-                        <div class="mb-4">
-                          <input type="text" value="<?= $oldFormData['signup-username'] ?? '' ?>" class="form-control form-control-lg form-control-alt py-3" id="signup-username" name="signup-username" placeholder="Username">
-                          <?php if (array_key_exists('signup-username', $errors)): ?>
-                            <div class="text-danger">
-                              <?php echo $errors['signup-username'][0]; ?>
-                            </div>
-                          <?php endif; ?>
-                        </div>
-                        <div class="mb-4">
-                          <input type="text" value="<?= $oldFormData['signup-email'] ?? '' ?>" class="form-control form-control-lg form-control-alt py-3" id="signup-email" name="signup-email" placeholder="Email">
-                          <?php if (array_key_exists('signup-email', $errors)): ?>
-                            <div class="text-danger">
-                              <?php echo $errors['signup-email'][0]; ?>
-                            </div>
-                          <?php endif; ?>
-                        </div>
-                        <!-- gender select -->
-                        <div class="mb-4">
-                          <select value="<?= $oldFormData['signup-gender'] ?? '' ?>" class="form-select form-select-lg form-control-alt py-3" id="signup-gender" name="signup-gender">
-                            <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </select>
-                          <?php if (array_key_exists('signup-gender', $errors)): ?>
-                            <div class="text-danger">
-                              <?php echo $errors['signup-gender'][0]; ?>
-                            </div>
-                          <?php endif; ?>
-                        </div>
-                        <div class="mb-4">
-                          <input type="password" class="form-control form-control-lg form-control-alt py-3" id="signup-password" name="signup-password" placeholder="Password">
-                          <?php if (array_key_exists('signup-password', $errors)): ?>
-                            <div class="text-danger">
-                              <?php echo $errors['signup-password'][0]; ?>
-                            </div>
-                          <?php endif; ?>
-                        </div>
-                        <div class="mb-4">
-                          <input type="password" class="form-control form-control-lg form-control-alt py-3" id="signup-password-confirm" name="signup-password-confirm" placeholder="Confirm Password">
-                          <?php if (array_key_exists('signup-password-confirm', $errors)): ?>
-                            <div class="text-danger">
-                              <?php echo $errors['signup-password-confirm'][0]; ?>
-                            </div>
-                          <?php endif; ?>
-                        </div>
-                        <div class="mb-4">
-                          <div class="d-md-flex align-items-md-center justify-content-md-between">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="<?php echo $oldFormData['signup-terms'] ?? '' ?>" id="signup-terms" name="signup-terms">
-                              <label class="form-check-label" for="signup-terms">I agree to Terms &amp; Conditions</label>
-                              <?php if (array_key_exists('signup-terms', $errors)): ?>
-                                <div class="text-danger">
-                                  <?php echo $errors['signup-terms'][0]; ?>
-                                </div>
-                              <?php endif; ?>
-                            </div>
-                            <div class="py-2">
-                              <a class="fs-sm fw-medium" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#one-signup-terms">View Terms</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="text-center">
-                          <button type="submit" class="btn btn-lg btn-alt-success">
-                            <i class="fa fa-fw fa-plus me-1 opacity-50"></i> Sign Up
-                          </button>
-                          <p class="fs-sm text-muted mb-0 mt-2">
-                          Already have an account?
-                    <a class="d-inline-block align-middle" href="/login">Sign In</a>
-                  </p>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <!-- END Sign Up Form -->
-                </div>
-              </div>
-              <div class="px-4 py-3 w-100 d-lg-none d-flex flex-column flex-sm-row justify-content-between fs-sm text-center text-sm-start">
-                <p class="fw-medium text-black-50 py-2 mb-0">
-                  <strong>OneUI 5.9</strong> &copy; <span data-toggle="year-copy"></span>
-                </p>
-                <ul class="list list-inline py-2 mb-0">
-                  <li class="list-inline-item">
-                    <a class="text-muted fw-medium" href="javascript:void(0)">Legal</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="text-muted fw-medium" href="javascript:void(0)">Contact</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="text-muted fw-medium" href="javascript:void(0)">Terms</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- END Main Section -->
           </div>
-
-          <!-- Terms Modal -->
-          <div class="modal fade" id="one-signup-terms" tabindex="-1" role="dialog" aria-labelledby="one-signup-terms" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-popout" role="document">
-              <div class="modal-content">
-                <div class="block block-rounded block-transparent mb-0">
-                  <div class="block-header block-header-default">
-                    <h3 class="block-title">Terms &amp; Conditions</h3>
-                    <div class="block-options">
-                      <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fa fa-fw fa-times"></i>
-                      </button>
-                    </div>
+          <div class="col-xl-5 col-xxl-4">
+            <div class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
+              <div class="auth-max-width col-sm-8 col-md-6 col-xl-7 px-4">
+                <h2 class="mb-1 fs-7 fw-bolder">Welcome to Modernize</h2>
+                <p class="mb-7">Your Admin Dashboard</p>
+                <div class="row">
+                  <div class="col-6 mb-2 mb-sm-0">
+                    <a class="btn text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8" href="javascript:void(0)" role="button">
+                      <img src="assets/images/svgs/google-icon.svg" alt="modernize-img" class="img-fluid me-2" width="18" height="18">
+                      <span class="flex-shrink-0">with Google</span>
+                    </a>
                   </div>
-                  <div class="block-content">
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                  <div class="col-6">
+                    <a class="btn text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8" href="javascript:void(0)" role="button">
+                      <img src="assets/images/svgs/facebook-icon.svg" alt="modernize-img" class="img-fluid me-2" width="18" height="18">
+                      <span class="flex-shrink-0">with FB</span>
+                    </a>
                   </div>
-                  <div class="block-content block-content-full text-end bg-body">
-                    <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">I Agree</button>
-                  </div>
-                  
                 </div>
+                <div class="position-relative text-center my-4">
+                  <p class="mb-0 fs-4 px-3 d-inline-block bg-body text-dark z-index-5 position-relative">or sign
+                    in
+                    with</p>
+                  <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
+                </div>
+                <form action="/register" method="post">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" id="exampleInputUsername" aria-describedby="usernameHelp">
+                    <?php if (isset($errors['username'])): ?>
+                      <div class="text-danger"><?php echo $errors['username'][0]; ?></div>
+                    <?php endif; ?>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <?php if (isset($errors['email'])): ?>
+                      <div class="text-danger"><?php echo $errors['email'][0]; ?></div>
+                    <?php endif; ?>
+                  </div>
+                  <div class="mb-4">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    <?php if (isset($errors['password'])): ?>
+                      <div class="text-danger"><?php echo $errors['password'][0]; ?></div>
+                    <?php endif; ?>
+                  </div>
+                  <div class="mb-4">
+                    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirm_password" id="exampleInputPassword1">
+                    <?php if (isset($errors['confirm_password'])): ?>
+                      <div class="text-danger"><?php echo $errors['confirm_password'][0]; ?></div>
+                    <?php endif; ?>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign Up</button>
+                  <div class="d-flex align-items-center">
+                    <p class="fs-4 mb-0 text-dark">Already have an Account?</p>
+                    <a class="text-primary fw-medium ms-2" href="/login">Sign In</a>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
-          <!-- END Terms Modal -->
         </div>
-        <!-- END Page Content -->
-      </main>
-      <!-- END Main Container -->
+      </div>
     </div>
-    <!-- END Page Container -->
+    <script>
+  function handleColorTheme(e) {
+    document.documentElement.setAttribute("data-color-theme", e);
+  }
+</script>
+    <button class="btn btn-primary p-3 rounded-circle d-flex align-items-center justify-content-center customizer-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <i class="icon ti ti-settings fs-7"></i>
+    </button>
+
+    <div class="offcanvas customizer offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
+        <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">
+          Settings
+        </h4>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body h-n80" data-simplebar>
+        <h6 class="fw-semibold fs-4 mb-2">Theme</h6>
+
+        <div class="d-flex flex-row gap-3 customizer-box" role="group">
+          <input type="radio" class="btn-check light-layout" name="theme-layout" id="light-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary rounded-2" for="light-layout">
+            <i class="icon ti ti-brightness-up fs-7 me-2"></i>Light
+          </label>
+
+          <input type="radio" class="btn-check dark-layout" name="theme-layout" id="dark-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary rounded-2" for="dark-layout">
+            <i class="icon ti ti-moon fs-7 me-2"></i>Dark
+          </label>
+        </div>
+
+        <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Direction</h6>
+        <div class="d-flex flex-row gap-3 customizer-box" role="group">
+          <input type="radio" class="btn-check" name="direction-l" id="ltr-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary" for="ltr-layout">
+            <i class="icon ti ti-text-direction-ltr fs-7 me-2"></i>LTR
+          </label>
+
+          <input type="radio" class="btn-check" name="direction-l" id="rtl-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary" for="rtl-layout">
+            <i class="icon ti ti-text-direction-rtl fs-7 me-2"></i>RTL
+          </label>
+        </div>
+
+        <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Colors</h6>
+
+        <div class="d-flex flex-row flex-wrap gap-3 customizer-box color-pallete" role="group">
+          <input type="radio" class="btn-check" name="color-theme-layout" id="Blue_Theme" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Blue_Theme')" for="Blue_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="BLUE_THEME">
+            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-1">
+              <i class="ti ti-check text-white d-flex icon fs-5"></i>
+            </div>
+          </label>
+
+          <input type="radio" class="btn-check" name="color-theme-layout" id="Aqua_Theme" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Aqua_Theme')" for="Aqua_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="AQUA_THEME">
+            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-2">
+              <i class="ti ti-check text-white d-flex icon fs-5"></i>
+            </div>
+          </label>
+
+          <input type="radio" class="btn-check" name="color-theme-layout" id="Purple_Theme" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Purple_Theme')" for="Purple_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="PURPLE_THEME">
+            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-3">
+              <i class="ti ti-check text-white d-flex icon fs-5"></i>
+            </div>
+          </label>
+
+          <input type="radio" class="btn-check" name="color-theme-layout" id="green-theme-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Green_Theme')" for="green-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="GREEN_THEME">
+            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-4">
+              <i class="ti ti-check text-white d-flex icon fs-5"></i>
+            </div>
+          </label>
+
+          <input type="radio" class="btn-check" name="color-theme-layout" id="cyan-theme-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Cyan_Theme')" for="cyan-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CYAN_THEME">
+            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-5">
+              <i class="ti ti-check text-white d-flex icon fs-5"></i>
+            </div>
+          </label>
+
+          <input type="radio" class="btn-check" name="color-theme-layout" id="orange-theme-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Orange_Theme')" for="orange-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ORANGE_THEME">
+            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-6">
+              <i class="ti ti-check text-white d-flex icon fs-5"></i>
+            </div>
+          </label>
+        </div>
+
+        <h6 class="mt-5 fw-semibold fs-4 mb-2">Layout Type</h6>
+        <div class="d-flex flex-row gap-3 customizer-box" role="group">
+          <div>
+            <input type="radio" class="btn-check" name="page-layout" id="vertical-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="vertical-layout">
+              <i class="icon ti ti-layout-sidebar-right fs-7 me-2"></i>Vertical
+            </label>
+          </div>
+          <div>
+            <input type="radio" class="btn-check" name="page-layout" id="horizontal-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="horizontal-layout">
+              <i class="icon ti ti-layout-navbar fs-7 me-2"></i>Horizontal
+            </label>
+          </div>
+        </div>
+
+        <h6 class="mt-5 fw-semibold fs-4 mb-2">Container Option</h6>
+
+        <div class="d-flex flex-row gap-3 customizer-box" role="group">
+          <input type="radio" class="btn-check" name="layout" id="boxed-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary" for="boxed-layout">
+            <i class="icon ti ti-layout-distribute-vertical fs-7 me-2"></i>Boxed
+          </label>
+
+          <input type="radio" class="btn-check" name="layout" id="full-layout" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary" for="full-layout">
+            <i class="icon ti ti-layout-distribute-horizontal fs-7 me-2"></i>Full
+          </label>
+        </div>
+
+        <h6 class="fw-semibold fs-4 mb-2 mt-5">Sidebar Type</h6>
+        <div class="d-flex flex-row gap-3 customizer-box" role="group">
+          <a href="javascript:void(0)" class="fullsidebar">
+            <input type="radio" class="btn-check" name="sidebar-type" id="full-sidebar" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="full-sidebar">
+              <i class="icon ti ti-layout-sidebar-right fs-7 me-2"></i>Full
+            </label>
+          </a>
+          <div>
+            <input type="radio" class="btn-check " name="sidebar-type" id="mini-sidebar" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="mini-sidebar">
+              <i class="icon ti ti-layout-sidebar fs-7 me-2"></i>Collapse
+            </label>
+          </div>
+        </div>
+
+        <h6 class="mt-5 fw-semibold fs-4 mb-2">Card With</h6>
+
+        <div class="d-flex flex-row gap-3 customizer-box" role="group">
+          <input type="radio" class="btn-check" name="card-layout" id="card-with-border" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary" for="card-with-border">
+            <i class="icon ti ti-border-outer fs-7 me-2"></i>Border
+          </label>
+
+          <input type="radio" class="btn-check" name="card-layout" id="card-without-border" autocomplete="off" />
+          <label class="btn p-9 btn-outline-primary" for="card-without-border">
+            <i class="icon ti ti-border-none fs-7 me-2"></i>Shadow
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dark-transparent sidebartoggler"></div>
 
     <?php include $this->resolve('partials/authentication/_footer.php') ?>

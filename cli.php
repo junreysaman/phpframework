@@ -7,5 +7,9 @@ use Framework\Database;
 $db = new Database('mysql', [
     'host'=> 'localhost',
     'port'=> 3306,
-    'dbname'=> 'phpframework_default',
+    'dbname'=> 'framework',
 ], 'root', '');
+
+$sql = file_get_contents('./database.sql');
+
+$db->connection->query($sql);

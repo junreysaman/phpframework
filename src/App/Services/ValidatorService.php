@@ -24,13 +24,10 @@ class ValidatorService
 
     public function validateRegister(array $formData){
         $this->validator->validate($formData, [
-            'signup-username' => ['required'],
-            // 'signup-age' => ['min':18],
-            'signup-gender ' => ['in:male,female'],
-            'signup-email' => ['required', 'email'],
-            'signup-password' => ['required', 'min:6'],
-            'signup-password-confirm' => ['required', 'match:signup-password'],
-            'signup-terms' => ['required'],
+            'username' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:6'],
+            'confirm_password' => ['required', 'match:password']
         ]);
     }
 

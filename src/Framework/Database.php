@@ -4,12 +4,17 @@ declare (strict_types= 1);
 
 namespace Framework;
 
-use PDO, PDOException;
+use PDO, PDOException, PDOStatement;
 
 class Database
 {
-    public PDO $connection;
-    public function __construct(private string $driver, private array $config, private string $username = 'root', private string $password = '')
+    private PDO $connection;
+    private PDOStatement $stmt;
+    public function __construct(
+        string $driver, 
+        array $config, 
+        string $username,
+        string $password)
     {
         $config = http_build_query(data: $config, arg_separator: ';');
 
@@ -17,9 +22,15 @@ class Database
 
         try {
             $this->connection = new PDO($dsn, $username, $password);
-            echo "Connected to the database successfully.";
+
         } catch (PDOException $e) {
             die("Connection failed: " . $e->getMessage());
         }
-    }   
-}
+    } 
+    
+    public function query(string $query, array $params = []){
+        $this->stmt = $this->connection->prepare($query);
+        $this->stmt->execute($params);
+        return $this->stmt;
+    }
+} 
