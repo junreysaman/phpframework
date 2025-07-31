@@ -19,7 +19,7 @@
               <div class="auth-max-width col-sm-8 col-md-6 col-xl-7 px-4">
                 <h2 class="mb-1 fs-7 fw-bolder">Welcome to Modernize</h2>
                 <p class="mb-7">Your Admin Dashboard</p>
-                <?php inspect($errors); ?>
+                <!-- <?php inspect($errors); ?> -->
                 <div class="row">
                   <div class="col-6 mb-2 mb-sm-0">
                     <a class="btn text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8" href="javascript:void(0)" role="button">
