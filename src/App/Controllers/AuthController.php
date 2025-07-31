@@ -27,6 +27,12 @@ class AuthController
     public function register()
     {  
        $this->validatorService->validateRegister($_POST);
+       $this->userService->isEmailTaken($_POST['email']);
+       $this->userService->create($_POST);
+
+       
+
+       redirectTo('/');
     }
 
     public function loginView()
@@ -34,5 +40,12 @@ class AuthController
         echo $this->view->render('userauth/login.php', [
             'title' => 'Login'
         ]);
+    }
+
+    public function login()
+    {
+        $this->validatorService->validateLogin($_POST);
+        $this->userService->login($_POST);
+        redirectTo('/');
     }
 }

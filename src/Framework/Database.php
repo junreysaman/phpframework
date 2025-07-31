@@ -21,16 +21,31 @@ class Database
         $dsn = "{$driver}:{$config}";
 
         try {
-            $this->connection = new PDO($dsn, $username, $password);
+            $this->connection = new PDO($dsn, $username, $password, [
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ]);
 
         } catch (PDOException $e) {
             die("Connection failed: " . $e->getMessage());
         }
     } 
     
-    public function query(string $query, array $params = []){
+    public function query(string $query, array $params = []): Database
+    {
         $this->stmt = $this->connection->prepare($query);
         $this->stmt->execute($params);
-        return $this->stmt;
+        return $this;
     }
+
+    public function count(): int
+    {
+        return $this->stmt->fetchColumn();
+    }
+
+    public function find()
+    {
+        return $this->stmt->fetch();
+    }
+
 } 

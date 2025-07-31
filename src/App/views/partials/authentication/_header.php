@@ -13,7 +13,7 @@
   <!-- Core Css -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <title>Modernize Bootstrap Admin</title>
+  <title><?= $title ?></title>
 </head>
 
 <body>

@@ -74,6 +74,7 @@
                   </div>
                 </form>
               </div>
+              <!-- <?php inspect($errors); ?> -->
             </div>
           </div>
         </div>
