@@ -33,8 +33,10 @@ class UserService
     {
         $password = password_hash($formData['password'], PASSWORD_BCRYPT, ['cost' => 16]);
         $this->db->query(
-            "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)",
+            "INSERT INTO users (first_name, last_name, username, email, password) VALUES (:first_name, :last_name, :username, :email, :password)",
             [
+                'first_name' => $formData['first_name'],
+                'last_name' => $formData['last_name'],
                 'username' => $formData['username'],
                 'email' => $formData['email'],
                 'password' => $password

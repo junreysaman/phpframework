@@ -8,7 +8,7 @@ use PDO, PDOException, PDOStatement;
 
 class Database
 {
-    private PDO $connection;
+    public PDO $connection;
     private PDOStatement $stmt;
     public function __construct(
         string $driver, 
@@ -22,8 +22,7 @@ class Database
 
         try {
             $this->connection = new PDO($dsn, $username, $password, [
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
 
         } catch (PDOException $e) {
