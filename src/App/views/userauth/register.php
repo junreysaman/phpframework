@@ -39,6 +39,7 @@
                   <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
                 </div>
                 <form action="/register" method="post">
+                <?php include $this->resolve('partials/_csrf.php'); ?>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
                     <input type="text" class="form-control" name="username" id="exampleInputUsername" aria-describedby="usernameHelp">

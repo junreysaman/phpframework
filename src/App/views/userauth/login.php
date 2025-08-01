@@ -41,6 +41,7 @@
                   <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
                 </div>
                 <form action="/login" method="POST">
+                  <?php include $this->resolve('partials/_csrf.php'); ?>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
                     <input value="<?php echo escape($oldFormData['email'] ?? ''); ?>" name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
